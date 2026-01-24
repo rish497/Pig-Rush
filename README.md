@@ -20,3 +20,4 @@ Hello and welcome to my game *oink*.
 3. Sign Boards: https://toffeecraft.itch.io/sign-boards-free
 4. Golden Pig: https://caz-bee.itch.io/golden-piggy
 5. Purple Pig: https://caz-bee.itch.io/piggy
+6. Cursor Image:<a href="https://www.flaticon.com/free-icons/pointer" title="pointer icons">Pointer icons created by Amazona Adorada - Flaticon</a>
