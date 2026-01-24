@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://b37gg8qcstlg"]
+
+[ext_resource type="Texture2D" uid="uid://b56f1ut3tly8k" path="res://Assets/piggy_sheet.png" id="1_bm56d"]
+[ext_resource type="Script" uid="uid://72fpe5d54ype" path="res://Scripts/gui.gd" id="1_m6o0h"]
+[ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="3_m6o0h"]
+[ext_resource type="Texture2D" uid="uid://blbgxty70doeg" path="res://Assets/32x32Tileset_gardenTheme.png" id="3_n5m23"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah32c"]
+texture = ExtResource("1_bm56d")
+region_rect = Rect2(101.762115, 47.125698, 19.58664, 16.322205)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6o0h"]
+texture = ExtResource("3_n5m23")
+region_rect = Rect2(4.368065, 388.6432, 24.621483, 29.256104)
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_m6o0h")
+
+[node name="Pig Collector Labe" type="Label" parent="."]
+offset_left = 1071.0
+offset_top = 11.0
+offset_right = 1263.6847
+offset_bottom = 175.13892
+scale = Vector2(0.37163642, 0.37163642)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ah32c")
+
+[node name="pig value" type="Label" parent="."]
+offset_left = 64.0
+offset_right = 1064.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("3_m6o0h")
+theme_override_font_sizes/font_size = 73
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Money" type="Label" parent="."]
+offset_left = 1072.0
+offset_top = 96.0
+offset_right = 1257.6653
+offset_bottom = 289.73773
+scale = Vector2(0.37163642, 0.37163642)
+theme_override_styles/normal = SubResource("StyleBoxTexture_m6o0h")
+
+[node name="Money Value" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 88.0
+offset_right = 1064.0
+offset_bottom = 184.0
+theme_override_fonts/font = ExtResource("3_m6o0h")
+theme_override_font_sizes/font_size = 73
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1

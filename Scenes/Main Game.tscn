@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dult4wxm2vymi"]
+[gd_scene load_steps=17 format=4 uid="uid://dult4wxm2vymi"]
 
 [ext_resource type="Texture2D" uid="uid://blbgxty70doeg" path="res://Assets/32x32Tileset_gardenTheme.png" id="1_y4wcj"]
 [ext_resource type="PackedScene" uid="uid://2r318e3pbh10" path="res://Scenes/Piggie.tscn" id="2_5y7al"]
@@ -7,8 +7,7 @@
 [ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="4_1k3vk"]
 [ext_resource type="PackedScene" uid="uid://rebaeyfi4oiv" path="res://Scenes/Stall(Sell).tscn" id="4_hrxl1"]
 [ext_resource type="PackedScene" uid="uid://bjv8m2t5vxfjp" path="res://Scenes/PigCollect.tscn" id="8_ah32c"]
-[ext_resource type="Texture2D" uid="uid://b56f1ut3tly8k" path="res://Assets/piggy_sheet.png" id="8_f8l6p"]
-[ext_resource type="FontFile" uid="uid://dpgh3lq1pq4xq" path="res://Assets/edunline.ttf" id="9_ah32c"]
+[ext_resource type="PackedScene" uid="uid://b37gg8qcstlg" path="res://Scenes/gui.tscn" id="8_f8l6p"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_y4wcj"]
 tile_data = PackedInt32Array(0, 1572864, 0, 65536, 1572864, 3, 131072, 1572864, 3, 196608, 1572864, 5, 1, 1638400, 0, 65537, 1769472, 4, 131073, 1769472, 4, 196609, 1769472, 5, 2, 1703936, 0, 65538, 1769472, 4, 131074, 1769472, 4, 196610, 1769472, 5, 3, 1900544, 0, 65539, 1900544, 2, 131075, 1900544, 2, 196611, 1900544, 5)
@@ -1683,10 +1682,6 @@ pattern_2 = SubResource("TileMapPattern_1x85s")
 texture = ExtResource("2_v7t23")
 region_rect = Rect2(106.61897, 32.07419, 31.121002, 36.779373)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah32c"]
-texture = ExtResource("8_f8l6p")
-region_rect = Rect2(101.762115, 47.125698, 19.58664, 16.322205)
-
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1738,23 +1733,4 @@ tile_set = SubResource("TileSet_v7t23")
 [node name="PigCollect" parent="." instance=ExtResource("8_ah32c")]
 position = Vector2(198, -48)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Pig Collector Labe" type="Label" parent="CanvasLayer"]
-offset_left = 1071.0
-offset_top = 11.0
-offset_right = 1263.6847
-offset_bottom = 175.13892
-scale = Vector2(0.37163642, 0.37163642)
-theme_override_styles/normal = SubResource("StyleBoxTexture_ah32c")
-
-[node name="pig value" type="Label" parent="CanvasLayer"]
-offset_left = 1035.0
-offset_top = -2.0
-offset_right = 1075.0
-offset_bottom = 94.0
-theme_override_fonts/font = ExtResource("9_ah32c")
-theme_override_font_sizes/font_size = 54
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="GUI" parent="." instance=ExtResource("8_f8l6p")]

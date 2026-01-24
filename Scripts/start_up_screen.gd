@@ -15,5 +15,5 @@ func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
 	
 	await fade.fade(1.0, 1.5).finished
-	await fade.fade(-1.0, 1.5).finished
+	fade.fade(-1.0, 1.5)
 	get_tree().change_scene_to_file("res://Scenes/Main Menu (Play).tscn")
