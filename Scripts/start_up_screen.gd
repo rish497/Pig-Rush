@@ -6,9 +6,10 @@ extends Control
 func _ready() -> void:
 	
 	sprite.play("Loading Screen")
-	await get_tree().create_timer(10.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	sprite.play("Gamecube")
 	await sprite.animation_finished
+	await get_tree().create_timer(1.5).timeout
 	
 	sprite.play("Godot")
 	await sprite.animation_finished

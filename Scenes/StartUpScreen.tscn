@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://dp8ganlmpwa4y"]
+[gd_scene load_steps=118 format=3 uid="uid://dp8ganlmpwa4y"]
 
 [ext_resource type="Texture2D" uid="uid://2d2u64uw4fwv" path="res://Assets/GodotSS.png" id="1_h3ug1"]
 [ext_resource type="Script" uid="uid://dfex1ll1ggow6" path="res://Scripts/start_up_screen.gd" id="1_q2c4w"]
@@ -149,10 +149,6 @@ region = Rect2(1440, 2160, 480, 360)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cpj1"]
 atlas = ExtResource("2_eh4au")
 region = Rect2(1920, 2160, 480, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nv4iu"]
-atlas = ExtResource("2_eh4au")
-region = Rect2(2400, 2160, 480, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6jv2m"]
 atlas = ExtResource("1_h3ug1")
@@ -564,9 +560,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2cpj1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nv4iu")
 }],
 "loop": false,
 "name": &"Gamecube",
