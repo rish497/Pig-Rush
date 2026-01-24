@@ -1,9 +1,12 @@
-[gd_scene load_steps=274 format=3 uid="uid://dx8lsqloqup5y"]
+[gd_scene load_steps=282 format=3 uid="uid://dx8lsqloqup5y"]
 
 [ext_resource type="Texture2D" uid="uid://d2510i4ndw3vx" path="res://Assets/spritesheet (1).png" id="1_618po"]
+[ext_resource type="Script" uid="uid://cku3sx47kju38" path="res://Scripts/main_menu_(play).gd" id="1_vrfmk"]
 [ext_resource type="Texture2D" uid="uid://cvvdte57mtkoo" path="res://Assets/PastelUIFree.png" id="1_x1upi"]
 [ext_resource type="FontFile" uid="uid://dpgh3lq1pq4xq" path="res://Assets/edunline.ttf" id="3_14y1s"]
-[ext_resource type="FontFile" uid="uid://btgsyxn5r8w7h" path="res://Assets/Minecraft.ttf" id="4_14y1s"]
+[ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="3_hbusa"]
+[ext_resource type="Texture2D" uid="uid://murfdw56ee8k" path="res://Assets/PastelUIFree (1) (1).png" id="4_ce0l8"]
+[ext_resource type="Texture2D" uid="uid://btvjfnneu8c2q" path="res://Assets/PastelUIFree (1).png" id="5_w0j2v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbusa"]
 atlas = ExtResource("1_618po")
@@ -1875,17 +1878,40 @@ animations = [{
 "speed": 26.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w0j2v"]
+texture = ExtResource("1_x1upi")
+region_rect = Rect2(183.069, 175.945, 51.938, 14.978)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jge0"]
+texture = ExtResource("5_w0j2v")
+texture_margin_left = 0.113382295
+texture_margin_right = 0.017037146
+region_rect = Rect2(182.89061, 223.97675, 52.132034, 15.021805)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqr6b"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-texture = ExtResource("1_x1upi")
+texture = ExtResource("5_w0j2v")
 region_rect = Rect2(183.06949, 175.94528, 51.938004, 14.978165)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hbusa"]
 texture = ExtResource("1_x1upi")
 region_rect = Rect2(109.56899, 8.772905, 60.250282, 82.84414)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ccsm"]
+texture = ExtResource("4_ce0l8")
+region_rect = Rect2(182.942, 208.1099, 52.145996, 14.935196)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pyyea"]
+texture = ExtResource("4_ce0l8")
+region_rect = Rect2(182.94162, 224.04753, 52.1463, 15.014664)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jg834"]
+texture = ExtResource("4_ce0l8")
+texture_margin_top = 0.19885485
+region_rect = Rect2(182.97563, 175.77196, 51.98967, 15.179291)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -1894,13 +1920,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vrfmk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(581, 345.99997)
 scale = Vector2(1.4820831, 1.4820836)
 sprite_frames = SubResource("SpriteFrames_xyc3t")
 autoplay = "default"
-frame_progress = 0.75213045
+frame_progress = 0.90140027
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -1909,14 +1936,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -160.91711
-offset_top = -52.5
-offset_right = 160.91711
-offset_bottom = 52.5
+offset_left = -367.0
+offset_top = -4.0
+offset_right = -45.16577
+offset_bottom = 101.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_wqr6b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_wqr6b")
+theme_override_styles/normal = SubResource("StyleBoxTexture_w0j2v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7jge0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wqr6b")
 
 [node name="Label" type="Label" parent="."]
@@ -1940,15 +1967,15 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 839.0
-offset_top = 281.0
-offset_right = 1143.0
-offset_bottom = 643.0
-theme_override_colors/font_color = Color(1.0000322, 0.93705106, 1.0000322, 1)
+offset_left = 705.0
+offset_top = 221.0
+offset_right = 1087.0
+offset_bottom = 636.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/paragraph_spacing = -4
 theme_override_constants/shadow_offset_y = 0
-theme_override_fonts/font = ExtResource("4_14y1s")
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("3_hbusa")
+theme_override_font_sizes/font_size = 39
 theme_override_styles/normal = SubResource("StyleBoxTexture_hbusa")
 text = "Hi! Welcome
 to my game
@@ -1960,3 +1987,23 @@ sacrifices will
 be required!!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -366.0
+offset_top = 139.0
+offset_right = -44.16577
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_8ccsm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pyyea")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jg834")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

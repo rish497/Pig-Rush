@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://2r318e3pbh10"]
+[gd_scene load_steps=15 format=3 uid="uid://2r318e3pbh10"]
 
 [ext_resource type="Script" uid="uid://gx7o25mbwoli" path="res://Scripts/piggie.gd" id="1_530ut"]
 [ext_resource type="Texture2D" uid="uid://brhl2tru03mqd" path="res://Assets/golden_piggy_sheet.png" id="2_530ut"]
@@ -22,6 +22,10 @@ region = Rect2(96, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jejxf"]
 atlas = ExtResource("2_530ut")
 region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_530ut"]
+atlas = ExtResource("2_530ut")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwxms"]
 atlas = ExtResource("2_530ut")
@@ -63,6 +67,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_530ut")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_iwxms")
 }, {
 "duration": 1.0,
@@ -89,9 +101,8 @@ script = ExtResource("1_530ut")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(9, -15)
 sprite_frames = SubResource("SpriteFrames_0or6a")
-animation = &"Walking"
+animation = &"Jump"
 autoplay = "Idle"
-frame_progress = 0.006658898
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9, -9)
