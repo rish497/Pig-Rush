@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d2510i4ndw3vx" path="res://Assets/spritesheet (1).png" id="1_618po"]
 [ext_resource type="Texture2D" uid="uid://cvvdte57mtkoo" path="res://Assets/PastelUIFree.png" id="1_x1upi"]
-[ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="3_hbusa"]
+[ext_resource type="FontFile" uid="uid://dpgh3lq1pq4xq" path="res://Assets/edunline.ttf" id="3_14y1s"]
 [ext_resource type="FontFile" uid="uid://btgsyxn5r8w7h" path="res://Assets/Minecraft.ttf" id="4_14y1s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbusa"]
@@ -1900,7 +1900,7 @@ position = Vector2(581, 345.99997)
 scale = Vector2(1.4820831, 1.4820836)
 sprite_frames = SubResource("SpriteFrames_xyc3t")
 autoplay = "default"
-frame_progress = 0.69711643
+frame_progress = 0.75213045
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -1932,7 +1932,7 @@ offset_right = 457.0
 offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_hbusa")
+theme_override_fonts/font = ExtResource("3_14y1s")
 theme_override_font_sizes/font_size = 200
 text = "Pig Rush!"
 horizontal_alignment = 1

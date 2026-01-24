@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjv8m2t5vxfjp"]
+
+[ext_resource type="Texture2D" uid="uid://b56f1ut3tly8k" path="res://Assets/piggy_sheet.png" id="1_3jbw7"]
+[ext_resource type="Script" uid="uid://cmgeghhuuj7os" path="res://Scripts/pig_collect.gd" id="1_d2730"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2730"]
+atlas = ExtResource("1_3jbw7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjdok"]
+atlas = ExtResource("1_3jbw7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4anv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2730")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjdok")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnfvb"]
+radius = 7.0
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_d2730")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4anv6")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_rnfvb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

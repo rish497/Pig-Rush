@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://rebaeyfi4oiv"]
+
+[ext_resource type="Texture2D" uid="uid://b65skxvg6lt2k" path="res://Assets/Stalls Pixel/4.png" id="1_xuru3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuru3"]
+size = Vector2(82, 62)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(26.56591, -25.999996)
+scale = Vector2(0.25581396, 0.25581396)
+texture = ExtResource("1_xuru3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(26, -27)
+shape = SubResource("RectangleShape2D_xuru3")
