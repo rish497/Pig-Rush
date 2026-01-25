@@ -1,4 +1,4 @@
-[gd_scene load_steps=282 format=3 uid="uid://dx8lsqloqup5y"]
+[gd_scene load_steps=291 format=3 uid="uid://dx8lsqloqup5y"]
 
 [ext_resource type="Texture2D" uid="uid://d2510i4ndw3vx" path="res://Assets/spritesheet (1).png" id="1_618po"]
 [ext_resource type="Script" uid="uid://cku3sx47kju38" path="res://Scripts/main_menu_(play).gd" id="1_vrfmk"]
@@ -7,6 +7,9 @@
 [ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="3_hbusa"]
 [ext_resource type="Texture2D" uid="uid://murfdw56ee8k" path="res://Assets/PastelUIFree (1) (1).png" id="4_ce0l8"]
 [ext_resource type="Texture2D" uid="uid://btvjfnneu8c2q" path="res://Assets/PastelUIFree (1).png" id="5_w0j2v"]
+[ext_resource type="FontFile" uid="uid://btgsyxn5r8w7h" path="res://Assets/Minecraft.ttf" id="8_jg834"]
+[ext_resource type="Texture2D" uid="uid://cdhphgyknu0od" path="res://Assets/Screenshot 2026-01-26 024733.png" id="9_7jge0"]
+[ext_resource type="Texture2D" uid="uid://bywp38dla6kun" path="res://Assets/Screenshot 2026-01-26 025347.png" id="10_d1oks"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbusa"]
 atlas = ExtResource("1_618po")
@@ -1913,6 +1916,31 @@ texture = ExtResource("4_ce0l8")
 texture_margin_top = 0.19885485
 region_rect = Rect2(182.97563, 175.77196, 51.98967, 15.179291)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d1oks"]
+texture = ExtResource("1_x1upi")
+region_rect = Rect2(182.87378, 224.10208, 52.082703, 14.924271)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6tbi"]
+texture = ExtResource("1_x1upi")
+region_rect = Rect2(182.701, 224.102, 52.083, 14.924)
+modulate_color = Color(0.49052292, 0.46484327, 0.4905123, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_feh14"]
+texture = ExtResource("1_x1upi")
+region_rect = Rect2(13.051178, 7.863434, 89.06066, 81.18773)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6tbi"]
+bg_color = Color(0.6862745, 0.75686276, 0.91764706, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jx60w"]
+texture = ExtResource("1_x1upi")
+region_rect = Rect2(51.000755, 147.04317, 9.971718, 10.029037)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_igwxa"]
+texture = ExtResource("1_x1upi")
+region_rect = Rect2(51.001, 147.043, 9.972, 10.029)
+modulate_color = Color(0.7796331, 0.09230647, 0.381824, 1)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -1936,10 +1964,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -367.0
-offset_top = -4.0
-offset_right = -45.16577
-offset_bottom = 101.0
+offset_left = -366.0
+offset_top = -75.0
+offset_right = -44.16577
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_w0j2v")
@@ -1995,15 +2023,113 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -366.0
-offset_top = 139.0
-offset_right = -44.16577
-offset_bottom = 244.0
+offset_left = -365.0
+offset_top = 49.0
+offset_right = -43.16577
+offset_bottom = 154.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_8ccsm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_pyyea")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jg834")
 
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.0
+offset_top = 182.0
+offset_right = -43.16577
+offset_bottom = 287.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hbusa")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxTexture_d1oks")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_d1oks")
+theme_override_styles/hover = SubResource("StyleBoxTexture_l6tbi")
+text = " CREATOR "
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="About" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.99265
+offset_top = -229.0
+offset_right = 260.99265
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.28, 1.28)
+pivot_offset = Vector2(270, -150)
+theme_override_styles/panel = SubResource("StyleBoxTexture_feh14")
+
+[node name="Label" type="Label" parent="CanvasLayer/About"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 94.0
+offset_right = 490.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("3_hbusa")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6tbi")
+text = "About the Creator"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Xout" type="Button" parent="CanvasLayer/About"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 202.0
+offset_top = -457.0
+offset_right = 262.0
+offset_bottom = -398.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hbusa")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_jx60w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jx60w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_igwxa")
+text = "X"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/About"]
+layout_mode = 0
+offset_left = 57.992645
+offset_top = 173.0
+offset_right = 260.99265
+offset_bottom = 405.0
+theme_override_fonts/normal_font = ExtResource("8_jg834")
+theme_override_font_sizes/normal_font_size = 20
+text = "Hi, my name is Rishabh and I am the solo creator of this project. I am from India and currently in Grade 10th. I love coding and playing basketball. One skill that I have achieved over 3 years is playing the Guitar. Finally, I LOVE TRAVELLING. Have been everywhere in the world excpet Europe. Thanks for visitng my project 😃"
+
+[node name="Screenshot20260126024733" type="Sprite2D" parent="CanvasLayer/About"]
+position = Vector2(338.86765, 241.00583)
+scale = Vector2(0.7149122, 0.71491206)
+texture = ExtResource("9_7jge0")
+
+[node name="Screenshot20260126025347" type="Sprite2D" parent="CanvasLayer/About"]
+position = Vector2(410.9927, 342)
+scale = Vector2(0.2446461, 0.24464606)
+texture = ExtResource("10_d1oks")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/About/Xout" to="." method="_on_xout_pressed"]

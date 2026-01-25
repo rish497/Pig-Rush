@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dult4wxm2vymi"]
+[gd_scene load_steps=32 format=4 uid="uid://dult4wxm2vymi"]
 
 [ext_resource type="Texture2D" uid="uid://blbgxty70doeg" path="res://Assets/32x32Tileset_gardenTheme.png" id="1_y4wcj"]
 [ext_resource type="PackedScene" uid="uid://2r318e3pbh10" path="res://Scenes/Piggie.tscn" id="2_5y7al"]
@@ -2207,6 +2207,11 @@ texture = ExtResource("13_utuun")
 texture = ExtResource("12_lay86")
 region_rect = Rect2(182.70148, 223.35065, 52.70096, 15.945419)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_buolp"]
+texture = ExtResource("12_lay86")
+region_rect = Rect2(182.701, 223.351, 52.701, 15.945)
+modulate_color = Color(0.61339027, 0.61339027, 0.61339027, 1)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_f8l6p"]
 distance = -91.0
 
@@ -2291,10 +2296,10 @@ vertical_alignment = 1
 
 [node name="Error2" type="AudioStreamPlayer" parent="Stall(Sell)"]
 stream = ExtResource("11_u6ta2")
-volume_db = -33.5
+volume_db = -10.691
 
 [node name="Piggie" parent="." instance=ExtResource("2_5y7al")]
-position = Vector2(24, -108)
+position = Vector2(20, -89)
 collision_layer = 5
 collision_mask = 5
 
@@ -2327,7 +2332,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="Piggie/CanvasLayer"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2390,12 +2394,12 @@ theme_override_fonts/font = ExtResource("4_1k3vk")
 theme_override_font_sizes/font_size = 33
 theme_override_styles/normal = SubResource("StyleBoxTexture_em1yx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_em1yx")
-theme_override_styles/hover = SubResource("StyleBoxTexture_em1yx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_buolp")
 text = "Claim Now"
 
 [node name="Error" type="AudioStreamPlayer" parent="Piggie"]
 stream = ExtResource("11_u6ta2")
-volume_db = -33.5
+volume_db = -11.555
 
 [node name="MoneySound2" type="AudioStreamPlayer" parent="Piggie"]
 stream = ExtResource("8_mxwxv")
@@ -2422,7 +2426,7 @@ collision_layer = 3
 [node name="DeathZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(2, 67)
+position = Vector2(-1, 40)
 shape = SubResource("WorldBoundaryShape2D_f8l6p")
 
 [node name="Timer" type="Timer" parent="DeathZone"]
@@ -2430,7 +2434,7 @@ wait_time = 0.572
 
 [node name="RespawnPoint" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(23, -101)
+position = Vector2(20, -75)
 
 [connection signal="body_entered" from="Stall(Sell)" to="Stall(Sell)" method="_on_body_entered"]
 [connection signal="body_exited" from="Stall(Sell)" to="Stall(Sell)" method="_on_body_exited"]

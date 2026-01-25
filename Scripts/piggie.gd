@@ -26,7 +26,7 @@ var pixel_accumulator: float = 0.0
 var sound_pool: Array[AudioStreamPlayer] = []
 
 func _ready():
-	last_x_position = global_position.x
+	position = %RespawnPoint.position
 	randomize()
 	sound_pool = [oink_1,oink_2,oink_3,oink_4]
 	start_random_timer()
@@ -145,10 +145,19 @@ func update_animation(direction: float) -> void:
 
 func killplayer():
 	death.play()
-	position = %RespawnPoint.position
-	$AnimatedSprite2D.flip_h=false
+	await get_tree().create_timer(1).timeout
+	Engine.time_scale = .85
+	velocity = Vector2.ZERO
+	global_position = %RespawnPoint.global_position
+	set_physics_process(false)
+	await get_tree().create_timer(0.1).timeout
+	set_physics_process(true)
 
 func _on_death_zone_body_entered(body: Node2D) -> void:
-	Engine.time_scale = 0.7
-	timer.start()
+	if body != self:
+		return
+	if global_position.y < 100: 
+		return
+	Engine.time_scale = .85
 	killplayer()
+	
