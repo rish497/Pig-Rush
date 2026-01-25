@@ -3,6 +3,7 @@ extends Area2D
 var player_inside = false
 
 func _on_button_pressed() -> void:
+	GameManager.play_button_click()
 	sold()
 
 func _on_body_exited(body: Node2D) -> void:
@@ -15,6 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 func _process(delta):
 	if player_inside and Input.is_action_just_pressed("E"):
+		GameManager.play_button_click()
 		sold()
 
 func sold():
