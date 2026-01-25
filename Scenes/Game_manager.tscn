@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm3rpvj4qiogl"]
+[gd_scene load_steps=4 format=3 uid="uid://bm3rpvj4qiogl"]
 
 [ext_resource type="Script" uid="uid://dyegl21ulw357" path="res://Scripts/game_manager.gd" id="1_511tk"]
 [ext_resource type="AudioStream" uid="uid://c3ho7ilmfegfe" path="res://Sounds/select-button-ui-395763.mp3" id="2_ef0r5"]
+[ext_resource type="AudioStream" uid="uid://cy7jnefeyu3ri" path="res://Sounds/Tales From The Vienna Woods.mp3" id="3_cxhmk"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_511tk")
@@ -10,3 +11,5 @@ script = ExtResource("1_511tk")
 stream = ExtResource("2_ef0r5")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cxhmk")
+volume_db = -10.016
