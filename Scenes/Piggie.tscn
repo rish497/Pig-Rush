@@ -1,7 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://2r318e3pbh10"]
+[gd_scene load_steps=22 format=3 uid="uid://2r318e3pbh10"]
 
 [ext_resource type="Script" uid="uid://gx7o25mbwoli" path="res://Scripts/piggie.gd" id="1_530ut"]
 [ext_resource type="Texture2D" uid="uid://brhl2tru03mqd" path="res://Assets/golden_piggy_sheet.png" id="2_530ut"]
+[ext_resource type="AudioStream" uid="uid://3al8kjhau6jm" path="res://Sounds/walking-on-leaves-260279.mp3" id="3_ngfkt"]
+[ext_resource type="AudioStream" uid="uid://byj3mi31e6f8e" path="res://Sounds/pig-sound-47168.mp3" id="4_jejxf"]
+[ext_resource type="AudioStream" uid="uid://bm7c3ydcbx5c4" path="res://Sounds/pig-squeak-47166.mp3" id="5_iwxms"]
+[ext_resource type="AudioStream" uid="uid://dsl8eporg0e00" path="res://Sounds/oink-40664.mp3" id="6_sq7mp"]
+[ext_resource type="AudioStream" uid="uid://o326n6g0gxd3" path="res://Sounds/pig-oink-47167.mp3" id="7_7mx3j"]
+[ext_resource type="AudioStream" uid="uid://qel2d0tcv3s3" path="res://Sounds/drop-sound-effect-240899.mp3" id="8_iwxms"]
+[ext_resource type="AudioStream" uid="uid://bdswtyfuk0ssa" path="res://Sounds/bar-increase-cartoon-funny-jump-384919.mp3" id="9_sq7mp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngfkt"]
 atlas = ExtResource("2_530ut")
@@ -107,3 +114,35 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9, -9)
 shape = SubResource("CircleShape2D_1mm2g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ngfkt")
+volume_db = -1.908
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Oink 5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_sq7mp")
+volume_db = -4.756
+
+[node name="Oink 6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7mx3j")
+volume_db = -3.817
+
+[node name="Oink 7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jejxf")
+volume_db = -3.913
+
+[node name="Oink 8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iwxms")
+volume_db = -3.817
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_iwxms")
+volume_db = 2.862
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_sq7mp")
+volume_db = -17.175
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

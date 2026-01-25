@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dult4wxm2vymi"]
+[gd_scene load_steps=23 format=4 uid="uid://dult4wxm2vymi"]
 
 [ext_resource type="Texture2D" uid="uid://blbgxty70doeg" path="res://Assets/32x32Tileset_gardenTheme.png" id="1_y4wcj"]
 [ext_resource type="PackedScene" uid="uid://2r318e3pbh10" path="res://Scenes/Piggie.tscn" id="2_5y7al"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cdvivg18nggyy" path="res://Assets/KeyboardLetters_Sheet_16x16.png" id="6_ah32c"]
 [ext_resource type="PackedScene" uid="uid://bjv8m2t5vxfjp" path="res://Scenes/PigCollect.tscn" id="8_ah32c"]
 [ext_resource type="PackedScene" uid="uid://b37gg8qcstlg" path="res://Scenes/gui.tscn" id="8_f8l6p"]
+[ext_resource type="AudioStream" uid="uid://yeee5cwi6807" path="res://Sounds/cashier-quotka-chingquot-sound-effect-129698.mp3" id="8_mxwxv"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_y4wcj"]
 tile_data = PackedInt32Array(0, 1572864, 0, 65536, 1572864, 3, 131072, 1572864, 3, 196608, 1572864, 5, 1, 1638400, 0, 65537, 1769472, 4, 131073, 1769472, 4, 196609, 1769472, 5, 2, 1703936, 0, 65538, 1769472, 4, 131074, 1769472, 4, 196610, 1769472, 5, 3, 1900544, 0, 65539, 1900544, 2, 131075, 1900544, 2, 196611, 1900544, 5)
@@ -2243,6 +2244,9 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_mxwxv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jnj4c")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jnj4c")
 theme_override_styles/focus = SubResource("StyleBoxTexture_mxwxv")
+
+[node name="MoneySound" type="AudioStreamPlayer" parent="Stall(Sell)"]
+stream = ExtResource("8_mxwxv")
 
 [node name="Piggie" parent="." instance=ExtResource("2_5y7al")]
 position = Vector2(13, -87)

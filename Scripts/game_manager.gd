@@ -6,6 +6,7 @@ var arrow = load("res://Assets/cursor (2) (1).png")
 var beam = load("res://Assets/tap (1).png")
 @onready var button_click: AudioStreamPlayer = $ButtonClick
 @onready var music: AudioStreamPlayer = $Music
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func play_button_click():
 	if button_click.playing:

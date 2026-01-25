@@ -1834,7 +1834,7 @@ offset_right = 586.0
 offset_bottom = 324.5
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.011764706, 0.011764706, 0.011764706, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(576.5, 323.99997)
@@ -1843,6 +1843,7 @@ sprite_frames = SubResource("SpriteFrames_6jv2m")
 animation = &"Loading Screen"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1864,6 +1865,17 @@ stream = ExtResource("6_fvsye")
 
 [node name="SOUND2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_auin0")
+volume_db = -1.195
 
 [node name="SOUND3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8i3xb")
+volume_db = -11.45
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 539.0
+offset_top = 429.0
+offset_right = 625.0
+offset_bottom = 452.0
+text = "LOADING..."
