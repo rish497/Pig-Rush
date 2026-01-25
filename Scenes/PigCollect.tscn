@@ -29,7 +29,6 @@ animations = [{
 radius = 7.0
 
 [node name="Area2D" type="Area2D"]
-collision_layer = 2
 script = ExtResource("1_d2730")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

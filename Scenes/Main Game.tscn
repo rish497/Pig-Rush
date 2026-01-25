@@ -2230,6 +2230,8 @@ horizontal_alignment = 1
 
 [node name="Stall(Sell)" parent="." instance=ExtResource("4_hrxl1")]
 position = Vector2(265, -36)
+collision_layer = 4
+collision_mask = 4
 
 [node name="Button" type="Button" parent="Stall(Sell)"]
 visible = false
@@ -2244,6 +2246,8 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_mxwxv")
 
 [node name="Piggie" parent="." instance=ExtResource("2_5y7al")]
 position = Vector2(13, -87)
+collision_layer = 5
+collision_mask = 5
 
 [node name="Camera2D" type="Camera2D" parent="Piggie"]
 zoom = Vector2(4.46, 4.46)
@@ -2283,6 +2287,7 @@ position = Vector2(14, -75)
 [connection signal="body_entered" from="Stall(Sell)" to="Stall(Sell)" method="_on_body_entered"]
 [connection signal="body_exited" from="Stall(Sell)" to="Stall(Sell)" method="_on_body_exited"]
 [connection signal="button_down" from="Stall(Sell)/Button" to="Stall(Sell)/Button" method="_on_button_down"]
+[connection signal="hidden" from="Stall(Sell)/Button" to="Stall(Sell)" method="_on_button_hidden"]
 [connection signal="pressed" from="Stall(Sell)/Button" to="Stall(Sell)" method="_on_button_pressed"]
 [connection signal="visibility_changed" from="Stall(Sell)/Button" to="Stall(Sell)" method="_on_button_visibility_changed"]
 [connection signal="body_entered" from="DeathZone" to="Piggie" method="_on_death_zone_body_entered"]

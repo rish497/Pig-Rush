@@ -1,14 +1,10 @@
 extends Area2D
 @onready var button: Button = $Button
-var player_inside := false
-
-func _ready():
-	button.visible = false
-	player_inside = false
+var player_inside = false
 
 func _on_button_pressed() -> void:
 	sold()
-	
+
 func _on_body_exited(body: Node2D) -> void:
 	button.visible = false
 	player_inside = false
@@ -29,6 +25,10 @@ func sold():
 		GameManager.money = GameManager.pig * 100
 		GameManager.pig = 0
 			
+
+
+	
+
 
 
 	
