@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://rebaeyfi4oiv"]
+[gd_scene load_steps=4 format=3 uid="uid://rebaeyfi4oiv"]
 
+[ext_resource type="Script" uid="uid://ctmnxqqj2irg6" path="res://Scripts/stall(sell).gd" id="1_mpyut"]
 [ext_resource type="Texture2D" uid="uid://b65skxvg6lt2k" path="res://Assets/Stalls Pixel/4.png" id="1_xuru3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xuru3"]
 size = Vector2(82, 62)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-collision_layer = 2
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_mpyut")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(26.56591, -25.999996)

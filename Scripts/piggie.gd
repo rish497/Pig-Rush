@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var timer: Timer = $"../DeathZone/Timer"
 
 @export var speed: float = 150.0
 @export var jump_force: float = 400.0
@@ -31,3 +32,14 @@ func update_animation(direction: float) -> void:
 		sprite.flip_h = direction < 0
 	else:
 		sprite.play("Idle")
+
+func killplayer():
+	position = %RespawnPoint.position
+	$AnimatedSprite2D.flip_h=false
+
+
+
+func _on_death_zone_body_entered(body: Node2D) -> void:
+	Engine.time_scale = 0.7
+	timer.start()
+	killplayer()
