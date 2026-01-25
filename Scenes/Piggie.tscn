@@ -106,7 +106,7 @@ position = Vector2(-5, 6)
 script = ExtResource("1_530ut")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(9, -15)
+position = Vector2(8, -16)
 sprite_frames = SubResource("SpriteFrames_0or6a")
 animation = &"Jump"
 autoplay = "Idle"

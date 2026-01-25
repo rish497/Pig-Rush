@@ -7,6 +7,7 @@ var beam = load("res://Assets/tap (1).png")
 @onready var button_click: AudioStreamPlayer = $ButtonClick
 @onready var music: AudioStreamPlayer = $Music
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+var gift_claimed := false
 
 func play_button_click():
 	if button_click.playing:
@@ -23,3 +24,17 @@ func play_music():
 		
 func stop_music():
 	music.stop()
+
+func add_money_smooth(amount: int):
+	var start_value = GameManager.money
+	var end_value = start_value + amount
+
+	var tween = get_tree().create_tween()
+	tween.tween_method(
+		func(value):
+			GameManager.money = int(value),
+		start_value,
+		end_value,
+		0.3 # duration (fast)
+	)
+	
