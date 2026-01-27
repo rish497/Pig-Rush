@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://b37gg8qcstlg"]
+[gd_scene load_steps=27 format=3 uid="uid://b37gg8qcstlg"]
 
 [ext_resource type="Texture2D" uid="uid://b56f1ut3tly8k" path="res://Assets/piggy_sheet.png" id="1_bm56d"]
 [ext_resource type="Script" uid="uid://72fpe5d54ype" path="res://Scripts/gui.gd" id="1_m6o0h"]
 [ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="3_m6o0h"]
 [ext_resource type="Texture2D" uid="uid://blbgxty70doeg" path="res://Assets/32x32Tileset_gardenTheme.png" id="3_n5m23"]
+[ext_resource type="Texture2D" uid="uid://cvvdte57mtkoo" path="res://Assets/PastelUIFree.png" id="5_8kag3"]
+[ext_resource type="Texture2D" uid="uid://cpjx2hl4nlma0" path="res://Assets/PastelUIFree (1) (3).png" id="5_gnd4w"]
+[ext_resource type="PackedScene" uid="uid://ccser5pvt2jeb" path="res://Scenes/Shop.tscn" id="6_3w84o"]
+[ext_resource type="Texture2D" uid="uid://bxhn4h8g8lryo" path="res://Assets/Border/ic_locked.png" id="7_gnd4w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah32c"]
 texture = ExtResource("1_bm56d")
@@ -12,6 +16,72 @@ region_rect = Rect2(101.762115, 47.125698, 19.58664, 16.322205)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6o0h"]
 texture = ExtResource("3_n5m23")
 region_rect = Rect2(4.368065, 388.6432, 24.621483, 29.256104)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3w84o"]
+texture = ExtResource("5_gnd4w")
+region_rect = Rect2(175.99774, 129.07642, 14.036514, 13.950409)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8kag3"]
+texture = ExtResource("5_gnd4w")
+region_rect = Rect2(191.89651, 128.9946, 14.161377, 14.066681)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bf1fa"]
+texture = ExtResource("5_8kag3")
+region_rect = Rect2(175.9464, 97.07167, 14.024124, 14.057816)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q52sk"]
+texture = ExtResource("5_8kag3")
+region_rect = Rect2(191.99655, 97.10222, 13.938049, 13.938049)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c5g4q"]
+texture = ExtResource("5_8kag3")
+region_rect = Rect2(175.946, 97.072, 14.024, 14.058)
+modulate_color = Color(0.7254902, 0.7254902, 0.7254902, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xnb2j"]
+texture = ExtResource("5_8kag3")
+region_rect = Rect2(175.8629, 144.69353, 14.097916, 14.212524)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s7psx"]
+texture = ExtResource("5_8kag3")
+region_rect = Rect2(192.08781, 144.96724, 13.938049, 14.146072)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_705sf"]
+texture = ExtResource("5_8kag3")
+region_rect = Rect2(175.863, 144.694, 14.098, 14.213)
+modulate_color = Color(0.7254902, 0.7254902, 0.7254902, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3tx2u"]
+texture = ExtResource("5_gnd4w")
+region_rect = Rect2(175.92345, 112.91609, 14.076691, 14.076698)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nc5vy"]
+texture = ExtResource("5_gnd4w")
+region_rect = Rect2(192.07678, 112.76646, 14.007355, 14.146042)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s45yd"]
+texture = ExtResource("7_gnd4w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ls8gd"]
+texture = ExtResource("5_gnd4w")
+region_rect = Rect2(208.01605, 144.86691, 13.858261, 14.066666)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ea75s"]
+texture = ExtResource("5_gnd4w")
+region_rect = Rect2(224.0494, 145.05475, 13.97522, 13.868683)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_603go"]
+texture = ExtResource("5_8kag3")
+region_rect = Rect2(175.92601, 128.93436, 14.040634, 13.926025)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6wv5k"]
+texture = ExtResource("5_8kag3")
+region_rect = Rect2(192.02914, 129.04352, 13.958862, 14.035156)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4dsw"]
+texture = ExtResource("5_8kag3")
+region_rect = Rect2(175.926, 128.934, 14.041, 13.926)
+modulate_color = Color(1, 0.8156863, 1, 1)
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_m6o0h")
@@ -52,3 +122,89 @@ theme_override_font_sizes/font_size = 73
 text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Shop" type="Button" parent="."]
+offset_left = 1048.0
+offset_top = 256.0
+offset_right = 1136.0
+offset_bottom = 344.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3w84o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8kag3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3w84o")
+
+[node name="Pause" type="Button" parent="."]
+offset_left = 1048.0
+offset_top = 376.0
+offset_right = 1136.0
+offset_bottom = 464.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bf1fa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q52sk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c5g4q")
+
+[node name="Settings" type="Button" parent="."]
+offset_left = 1048.0
+offset_top = 488.0
+offset_right = 1136.0
+offset_bottom = 576.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xnb2j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s7psx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_705sf")
+
+[node name="TPtoSell" type="Button" parent="."]
+offset_left = 928.0
+offset_top = 256.0
+offset_right = 1016.0
+offset_bottom = 344.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3tx2u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nc5vy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3tx2u")
+
+[node name="Label" type="Label" parent="TPtoSell"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 97.0
+offset_bottom = 96.0
+scale = Vector2(0.76, 0.76)
+theme_override_styles/normal = SubResource("StyleBoxTexture_s45yd")
+
+[node name="SellAtSpot" type="Button" parent="."]
+offset_left = 928.0
+offset_top = 375.0
+offset_right = 1016.0
+offset_bottom = 463.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ls8gd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ea75s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ls8gd")
+expand_icon = true
+
+[node name="Label" type="Label" parent="SellAtSpot"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 97.0
+offset_bottom = 96.0
+scale = Vector2(0.76, 0.76)
+theme_override_styles/normal = SubResource("StyleBoxTexture_s45yd")
+
+[node name="SHOP" parent="." instance=ExtResource("6_3w84o")]
+offset_left = -154.0
+offset_top = 1.0
+offset_right = -154.0
+offset_bottom = 1.0
+pivot_offset = Vector2(575, 324)
+
+[node name="Button" type="Button" parent="SHOP"]
+layout_mode = 0
+offset_left = 847.0
+offset_top = 32.0
+offset_right = 927.0
+offset_bottom = 112.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_603go")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6wv5k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t4dsw")
+
+[connection signal="pressed" from="Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="SHOP/Button" to="." method="_on_button_pressed"]

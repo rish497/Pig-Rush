@@ -1,0 +1,177 @@
+[gd_scene load_steps=15 format=3 uid="uid://ccser5pvt2jeb"]
+
+[ext_resource type="Script" uid="uid://2xnmxsk83k1p" path="res://Scripts/shop.gd" id="1_e5ji4"]
+[ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="2_i4qx4"]
+[ext_resource type="PackedScene" uid="uid://bue1w6d7w2oe6" path="res://Scenes/ShopItems.tscn" id="3_e5ji4"]
+[ext_resource type="Texture2D" uid="uid://chwef47nnvxxh" path="res://Assets/pngtree-checkered-square-pattern-png-image_11898394.png" id="4_ckylj"]
+[ext_resource type="Texture2D" uid="uid://bkmulvvxr8l34" path="res://Assets/12301789.png" id="5_ckylj"]
+[ext_resource type="Texture2D" uid="uid://ct8jly6gosw68" path="res://Assets/pngtree-bicolor-icon-of-a-reward-seal-for-achieving-success-in-competitions-vector-png-image_19321810.png" id="6_2aaoe"]
+[ext_resource type="Texture2D" uid="uid://dewx0r1a0keeb" path="res://Assets/3142740.png" id="6_wndna"]
+[ext_resource type="Texture2D" uid="uid://ywnxequj2r2t" path="res://Assets/878580_hide_512x512.png" id="7_2aaoe"]
+[ext_resource type="PackedScene" uid="uid://cm3xuwmqmyiji" path="res://Scenes/ShopPotions.tscn" id="8_ct2yw"]
+[ext_resource type="Texture2D" uid="uid://dwi76wst3xtde" path="res://Assets/2742687.png" id="9_ccd4q"]
+[ext_resource type="Texture2D" uid="uid://dtyu85c0lb74q" path="res://Assets/7946001.png" id="10_1mgah"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5ji4"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.70241714, 0.7961871, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1mgah"]
+texture = ExtResource("4_ckylj")
+modulate_color = Color(1, 1, 1, 0.023529412)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ccd4q"]
+texture = ExtResource("6_wndna")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e5ji4")
+
+[node name="ShopPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 56.0
+offset_right = 904.0
+offset_bottom = 600.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5ji4")
+
+[node name="Label" type="Label" parent="ShopPanel"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = -28.0
+offset_right = 360.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_i4qx4")
+theme_override_font_sizes/font_size = 76
+text = "SHOP!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="ShopPanel"]
+layout_mode = 0
+offset_right = 656.0
+offset_bottom = 662.33813
+theme_override_styles/normal = SubResource("StyleBoxTexture_1mgah")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -227.0
+offset_right = 306.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ShopPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+scroll_deadzone = -1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_i4qx4")
+theme_override_font_sizes/font_size = 36
+text = "⭐ UPGRADES ⭐"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 6
+
+[node name="Panel" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_e5ji4")]
+layout_mode = 2
+itemname = "T.P. TO SELL"
+itemimage = ExtResource("5_ckylj")
+itemprice = "500"
+itemdescription = "Teleport to shop"
+
+[node name="Panel2" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_e5ji4")]
+layout_mode = 2
+itemname = "SELL AT SPOT"
+itemimage = ExtResource("6_2aaoe")
+itemprice = "1500"
+itemdescription = "Sell pigs right where you stand"
+
+[node name="Panel3" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_e5ji4")]
+layout_mode = 2
+itemname = "Cheap Walking"
+itemimage = ExtResource("7_2aaoe")
+itemprice = "2000"
+itemdescription = "Walking will become cheaper"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_i4qx4")
+theme_override_font_sizes/font_size = 36
+text = "⭐ POTIONS ⭐"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="Panel" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_ct2yw")]
+layout_mode = 2
+itemname = "Walking is free (5min)"
+itemimage = ExtResource("9_ccd4q")
+itemprice = "200"
+itemdescription = "Walking costs nothing for 5 minutes"
+
+[node name="Panel2" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_ct2yw")]
+layout_mode = 2
+itemname = "2x Everything (5min)"
+itemimage = ExtResource("10_1mgah")
+itemprice = "500"
+itemdescription = "The value of pigs and the amount earned is 2x"
+
+[node name="Label2" type="Label" parent="ShopPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -56.0
+offset_right = 128.82433
+offset_bottom = 45.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ccd4q")

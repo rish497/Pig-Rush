@@ -2258,7 +2258,6 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="Button" type="Button" parent="Stall(Sell)"]
-visible = false
 offset_left = 24.0
 offset_top = -23.0
 offset_right = 36.0
@@ -2267,6 +2266,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_mxwxv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jnj4c")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jnj4c")
 theme_override_styles/focus = SubResource("StyleBoxTexture_mxwxv")
+autowrap_trim_flags = 0
 
 [node name="MoneySound" type="AudioStreamPlayer" parent="Stall(Sell)"]
 stream = ExtResource("8_mxwxv")
@@ -2414,10 +2414,10 @@ tile_set = SubResource("TileSet_v7t23")
 
 [node name="PigCollect" type="Node" parent="."]
 
-[node name="PigCollect" parent="PigCollect" instance=ExtResource("8_ah32c")]
+[node name="PigCollect" parent="PigCollect" groups=["PigCollection"] instance=ExtResource("8_ah32c")]
 position = Vector2(198, -48)
 
-[node name="PigCollect2" parent="PigCollect" instance=ExtResource("8_ah32c")]
+[node name="PigCollect2" parent="PigCollect" groups=["PigCollect", "PigCollection"] instance=ExtResource("8_ah32c")]
 position = Vector2(-141, -32)
 collision_layer = 3
 
@@ -2443,5 +2443,6 @@ position = Vector2(20, -75)
 [connection signal="pressed" from="Stall(Sell)/Button" to="Stall(Sell)" method="_on_button_pressed"]
 [connection signal="visibility_changed" from="Stall(Sell)/Button" to="Stall(Sell)" method="_on_button_visibility_changed"]
 [connection signal="pressed" from="Piggie/CanvasLayer/Panel/BuyNow!" to="Piggie" method="_on_buy_now_pressed"]
+[connection signal="body_entered" from="PigCollect/PigCollect2" to="Piggie" method="_on_pig_collect_2_body_entered"]
 [connection signal="body_entered" from="DeathZone" to="Piggie" method="_on_death_zone_body_entered"]
 [connection signal="timeout" from="DeathZone/Timer" to="Piggie" method="_on_timer_timeout"]

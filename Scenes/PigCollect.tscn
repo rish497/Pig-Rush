@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjv8m2t5vxfjp"]
+[gd_scene load_steps=7 format=3 uid="uid://bjv8m2t5vxfjp"]
 
 [ext_resource type="Texture2D" uid="uid://b56f1ut3tly8k" path="res://Assets/piggy_sheet.png" id="1_3jbw7"]
 [ext_resource type="Script" uid="uid://cmgeghhuuj7os" path="res://Scripts/pig_collect.gd" id="1_d2730"]
-[ext_resource type="AudioStream" uid="uid://dv08lw0qwa7hl" path="res://Sounds/item-equip-6904.mp3" id="3_sjdok"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2730"]
 atlas = ExtResource("1_3jbw7")
@@ -39,10 +38,6 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_rnfvb")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_sjdok")
-volume_db = 3.963
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

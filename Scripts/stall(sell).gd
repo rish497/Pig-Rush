@@ -13,10 +13,12 @@ func _on_button_pressed() -> void:
 func _on_body_exited(body: Node2D) -> void:
 	button.visible = false
 	player_inside = false
+	message_label.visible = false
 
 func _on_body_entered(body: Node2D) -> void:
 	button.visible = true
 	player_inside = true
+	show_message_permanent("Press [E] to Sell")
 	
 func _process(delta):
 	if player_inside and Input.is_action_just_pressed("E"):
@@ -34,12 +36,22 @@ func sold():
 		money_sound.play()
 		GameManager.add_money_smooth(GameManager.pig * 100)
 		GameManager.pig = 0
-
+		
+func show_message_permanent(text:String):
+	message_label.text = text
+	message_label.visible = true
+	message_label.modulate.a = 1.0
+	message_label.position.x = 0
+	var tween = create_tween()
+	message_label.set_meta("tween", tween)
+	tween.tween_property(message_label, "position:x", 10, 0.05)
+	
 func show_message(text: String):
 	message_label.text = text
 	message_label.visible = true
 	message_label.modulate.a = 1.0
 	message_label.position.x = 0
+	
 	
 	if message_label.has_meta("tween"):
 		message_label.get_meta("tween").kill()

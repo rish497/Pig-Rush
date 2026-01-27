@@ -7,8 +7,7 @@ var delta = -1
 func _on_body_entered(body: Node2D):
 		GameManager.pig +=1
 		animated_sprite_2d.visible = false
-		audio_stream_player.play()
-		await audio_stream_player.finished
+		GameManager.collect_sound = true
 		queue_free()
 
 

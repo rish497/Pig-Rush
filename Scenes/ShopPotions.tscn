@@ -1,0 +1,233 @@
+[gd_scene load_steps=15 format=3 uid="uid://cm3xuwmqmyiji"]
+
+[ext_resource type="Script" uid="uid://b1gnc55lalwx7" path="res://Scripts/shop_items.gd" id="1_n8ne1"]
+[ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="2_xjk4g"]
+[ext_resource type="Texture2D" uid="uid://f58gboy335u2" path="res://icon.svg" id="3_y6p8r"]
+[ext_resource type="Texture2D" uid="uid://djs52ooum31q" path="res://Assets/image (3).png" id="4_iyfxa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6xse"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+bg_color = Color(0.9607843, 0.84705883, 0.85882354, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.9647059, 0.7882353, 0.7882353, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.9647059, 0.7882353, 0.7882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0urpg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.9103162, 0.069008075, 0.42549804, 1)
+corner_radius_top_left = 23
+corner_radius_top_right = 23
+corner_radius_bottom_right = 23
+corner_radius_bottom_left = 23
+
+[sub_resource type="Gradient" id="Gradient_h6wxi"]
+offsets = PackedFloat32Array(0, 0.45333335, 1)
+colors = PackedColorArray(1, 0.34600875, 0.5527595, 1, 1, 0.47880942, 0.39063615, 1, 1, 0.6725677, 0.15409547, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l4s1s"]
+gradient = SubResource("Gradient_h6wxi")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6wxi"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0, 0.8765691, 0.12819007, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 6
+border_color = Color(0, 0.50078565, 0.25046423, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0urpg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4s1s"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 0.4117647)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85auk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8x1t"]
+bg_color = Color(0.23566183, 1.8199441e-07, 8.4228816e-08, 0.9019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85auk"]
+bg_color = Color(0, 0.4745098, 0.08627451, 0.80784315)
+
+[node name="Panel" type="Panel"]
+clip_children = 2
+custom_minimum_size = Vector2(300, 200)
+anchors_preset = -1
+anchor_right = 0.0031388865
+offset_right = 181.0
+offset_bottom = 184.616
+scale = Vector2(1.039999, 1.039999)
+theme_override_styles/panel = SubResource("StyleBoxFlat_a6xse")
+script = ExtResource("1_n8ne1")
+metadata/_edit_use_anchors_ = true
+
+[node name="BorderPanel" type="Panel" parent="."]
+clip_children = 1
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 0
+offset_left = -0.96153927
+offset_top = -0.9615394
+offset_right = 300.00027
+offset_bottom = 200.96173
+theme_override_styles/panel = SubResource("StyleBoxFlat_0urpg")
+
+[node name="TextureRect3" type="TextureRect" parent="BorderPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99500006
+anchor_bottom = 0.99500006
+offset_left = -13.461551
+offset_top = -10.576933
+offset_right = 9.5673065
+offset_bottom = 14.36058
+texture = SubResource("GradientTexture2D_l4s1s")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.9616852
+offset_top = -41.3461
+offset_right = 128.84637
+offset_bottom = 60.577087
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_xjk4g")
+theme_override_font_sizes/font_size = 15
+text = "THIS IS A 5 MINUTE POTION FOR THE NOOBS AND DONT WORRY "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.73076
+offset_top = -23.07685
+offset_right = -24.999886
+offset_bottom = 85.36597
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_y6p8r")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(138.462, 33)
+layout_mode = 0
+offset_left = 4.8076973
+offset_top = 15.38463
+offset_right = 293.2695
+offset_bottom = 48.38463
+theme_override_fonts/font = ExtResource("2_xjk4g")
+theme_override_font_sizes/font_size = 29
+text = "123456789123sdsdsdsdsdsd"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(120.192, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5869233
+anchor_top = 0.8308659
+anchor_right = 0.70055985
+anchor_bottom = 1.12577
+offset_left = -27.999939
+offset_top = -18.096115
+offset_right = 92.19249
+offset_bottom = -37.076904
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.84615314, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_h6wxi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0.05, 0)
+layout_mode = 2
+texture = ExtResource("4_iyfxa")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xjk4g")
+theme_override_font_sizes/font_size = 28
+text = "10,000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 0
+offset_left = 152.88477
+offset_top = 146.15399
+offset_right = 296.06696
+offset_bottom = 186.15399
+scale = Vector2(0.84615254, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0urpg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l4s1s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_85auk")
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 0.9615394
+offset_right = 302.88492
+offset_bottom = 200.96173
+theme_override_fonts/font = ExtResource("2_xjk4g")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8x1t")
+text = "NOT ENOUGH MONEY "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 300.96182
+offset_bottom = 200.96173
+theme_override_fonts/font = ExtResource("2_xjk4g")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_85auk")
+text = "ALREADY BOUGHT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,139 @@
+[gd_scene load_steps=12 format=3 uid="uid://ccser5pvt2jeb"]
+
+[ext_resource type="Script" uid="uid://2xnmxsk83k1p" path="res://Scripts/shop.gd" id="1_e5ji4"]
+[ext_resource type="Texture2D" uid="uid://cvvdte57mtkoo" path="res://Assets/PastelUIFree.png" id="1_lagin"]
+[ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="2_i4qx4"]
+[ext_resource type="PackedScene" uid="uid://bue1w6d7w2oe6" path="res://Scenes/ShopItems.tscn" id="3_e5ji4"]
+[ext_resource type="Texture2D" uid="uid://hw73b3ysder0" path="res://Assets/28-288275_cash-cash-pixel-art-png.png" id="4_i4qx4"]
+[ext_resource type="Texture2D" uid="uid://dewx0r1a0keeb" path="res://Assets/3142740.png" id="6_wndna"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5ji4"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.70241714, 0.7961871, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ckylj"]
+texture = ExtResource("1_lagin")
+region_rect = Rect2(175.92601, 128.93436, 14.040634, 13.926025)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2aaoe"]
+texture = ExtResource("1_lagin")
+region_rect = Rect2(192.02914, 129.04352, 13.958862, 14.035156)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ct2yw"]
+texture = ExtResource("1_lagin")
+region_rect = Rect2(175.926, 128.934, 14.041, 13.926)
+modulate_color = Color(1, 0.8156863, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ccd4q"]
+texture = ExtResource("6_wndna")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e5ji4")
+
+[node name="ShopPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 56.0
+offset_right = 904.0
+offset_bottom = 600.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5ji4")
+
+[node name="Button" type="Button" parent="ShopPanel"]
+layout_mode = 0
+offset_left = 600.0
+offset_top = -24.0
+offset_right = 680.0
+offset_bottom = 56.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ckylj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2aaoe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ct2yw")
+
+[node name="Label" type="Label" parent="ShopPanel"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = -28.0
+offset_right = 360.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_i4qx4")
+theme_override_font_sizes/font_size = 76
+text = "SHOP!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -190.0
+offset_right = 306.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ShopPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+scroll_deadzone = -1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 6
+
+[node name="Panel" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_e5ji4")]
+layout_mode = 2
+itemname = "YourMom"
+itemimage = ExtResource("4_i4qx4")
+itemprice = "10000000"
+itemdescription = "Yo this is only a test for you"
+
+[node name="Panel2" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_e5ji4")]
+layout_mode = 2
+
+[node name="Panel3" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_e5ji4")]
+layout_mode = 2
+itemname = "YourMom"
+itemimage = ExtResource("4_i4qx4")
+itemprice = "10000000"
+
+[node name="Label2" type="Label" parent="ShopPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -56.0
+offset_right = 128.82433
+offset_bottom = 45.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ccd4q")

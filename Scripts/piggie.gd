@@ -125,7 +125,6 @@ func handle_movement_money():
 
 	if velocity.x != 0:
 		pixel_accumulator += delta_x
-
 		while pixel_accumulator >= pixels_per_money:
 			if GameManager.money > 0:
 				GameManager.money -= money_cost
