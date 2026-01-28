@@ -242,7 +242,7 @@ theme_override_constants/separation = 11
 
 [node name="Panel" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_ct2yw")]
 layout_mode = 2
-itemname = "Walking is free (5min)"
+itemname = "Walking is free (2min)"
 itemimage = ExtResource("9_ccd4q")
 itemprice = "200"
 itemdescription = "Walking costs nothing for 5 minutes"

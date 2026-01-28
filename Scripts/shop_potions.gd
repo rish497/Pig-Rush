@@ -13,6 +13,7 @@ func _ready():
 	$PanelContainer/HBoxContainer/Label.text = itemprice
 	$Label2.text = itemdescription
 	
+	
 func _process(delta: float) -> void:
 	if GameManager.walking_free == false:
 		label_4.visible = false
@@ -25,16 +26,17 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	GameManager.play_button_click()
-	label_4.visible = true
+	print("testbug")
 	if GameManager.money>=int(itemprice):
 		GameManager.loose_money_smooth(int(itemprice))
-		if itemname == "Walking is free (5min)":
+		if itemname == "Walking is free (2min)":
+			label_4.visible = true
 			GameManager.walking_free = true
 			GameManager.walking_value = 0
 		elif itemname == "2x Everything (5min)":
 			GameManager.twointo = true
 	else:
-		pass
+		print("testfail")
 		
 			
 

@@ -6,7 +6,8 @@ extends Panel
 
 @export var title: String
 @export var image: Texture2D
-@export var time_seconds: int = 300
+@export var time_seconds: int = 120
+
 
 var current_time: int
 
@@ -16,7 +17,7 @@ func _ready():
 
 	$Panel2/Time.text = format_time(current_time)
 
-	$Panel/TextureRect.texture = image
+	$TextureRect.texture = image
 	$Panel2/Title.text = title
 
 	timer.timeout.connect(_on_timer_timeout)
@@ -40,9 +41,9 @@ func _on_timer_timeout():
 		timer.stop()
 		GameManager.walking_free = false
 		if GameManager.cheap_walking == true:
-			GameManager.walking_value = 4
+			GameManager.walking_value = .5
 		else:
-			GameManager.walking_value = 8
+			GameManager.walking_value = 1
 
 
 func _on_walking_free_changed(value: bool) -> void:

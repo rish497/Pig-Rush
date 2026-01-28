@@ -30,7 +30,7 @@ func _on_button_pressed() -> void:
 			GameManager.Sell_at_spot = true
 		elif itemname == "Cheap Walking":
 			GameManager.cheap_walking = true
-			GameManager.walking_value = 4
+			GameManager.walking_value = .5
 		elif itemname == "Valuable Pigs":
 			GameManager.pig_value = 200
 		elif itemname == "Walking is free (5min)":

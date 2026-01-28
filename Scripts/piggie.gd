@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var timer: Timer = $Timer
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @export var speed: float = 150.0
+@export var Climb_speed= 50
 @export var jump_force: float = 400.0
 @export var gravity: float = 1500.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -16,12 +17,13 @@ extends CharacterBody2D
 @onready var panel: Panel = $CanvasLayer/Panel
 @onready var button: Button = $"CanvasLayer/Panel/BuyNow!"
 @onready var money_sound_2: AudioStreamPlayer = $MoneySound2
-
+var on_ladder : bool
+var climbing:bool
+var can_move := true
 var last_x_position: float
 var pixel_accumulator: float = 0.0
 
 @export var pixels_per_money := 8
-@export var money_cost := 1
 
 var sound_pool: Array[AudioStreamPlayer] = []
 
@@ -64,6 +66,10 @@ func play_random_sound():
 	player.play()
 
 func _physics_process(delta: float) -> void:
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
@@ -95,7 +101,23 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	handle_movement_money()
 	update_animation(direction)
-
+	if on_ladder:
+		var vertical_dir = Input.get_axis("ui_up","ui_down")
+		if GameManager.money > 0:
+			if vertical_dir:
+				velocity.y = vertical_dir * Climb_speed
+				climbing = true
+			else:
+				velocity.y = move_toward(velocity.y, 0, Climb_speed)
+				if is_on_floor(): climbing=false
+			if climbing:
+				if vertical_dir: sprite.play("Climb")
+				else: sprite.pause()
+		elif is_on_floor() == false:
+			velocity += get_gravity() * delta
+		if GameManager.money <= 0:
+			show_message("Not enough money to climb")
+		move_and_slide()
 func show_message(text: String):
 	message_label.text = text
 	message_label.visible = true
@@ -125,15 +147,17 @@ func handle_movement_money():
 
 	if velocity.x != 0:
 		pixel_accumulator += delta_x
+
 		while pixel_accumulator >= pixels_per_money:
 			if GameManager.money > 0:
-				GameManager.money -= money_cost
+				GameManager.money -= GameManager.walking_value
 				pixel_accumulator -= pixels_per_money
 			else:
 				pixel_accumulator = 0
 				break
 
 	last_x_position = current_x
+
 
 func update_animation(direction: float) -> void:
 	if direction != 0:
@@ -143,14 +167,15 @@ func update_animation(direction: float) -> void:
 		sprite.play("Idle")
 
 func killplayer():
+	can_move = false
 	death.play()
 	await get_tree().create_timer(1).timeout
-	Engine.time_scale = .85
+	Engine.time_scale = 0.85
 	velocity = Vector2.ZERO
 	global_position = %RespawnPoint.global_position
-	set_physics_process(false)
 	await get_tree().create_timer(0.1).timeout
-	set_physics_process(true)
+	can_move = true
+
 
 func _on_death_zone_body_entered(body: Node2D) -> void:
 	if body != self:
@@ -160,3 +185,12 @@ func _on_death_zone_body_entered(body: Node2D) -> void:
 	Engine.time_scale = .85
 	killplayer()
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	on_ladder = true
+
+ 
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	on_ladder = false
+	sprite.play("Idle")

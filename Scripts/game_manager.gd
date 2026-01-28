@@ -4,7 +4,7 @@ var pig = 0
 var money = 1000000
 var arrow = load("res://Assets/Pointer3.png")
 var pig_value = 100
-var walking_value = 8
+var walking_value := 1
 var collect_sound = false
 var TP_to_sell = false
 var Sell_at_spot = false
@@ -17,6 +17,8 @@ var walking_free := false:
 		walking_free_changed.emit(value)
 var twointo = false
 var gift_claimed := false
+var default_walking_value := 1
+
 @onready var button_click: AudioStreamPlayer = $ButtonClick
 @onready var music: AudioStreamPlayer = $Music
 @onready var collect: AudioStreamPlayer = $collect
@@ -69,7 +71,10 @@ func _process(delta: float) -> void:
 		await collect.finished
 		collect_sound = false
 
-	
+func activate_walking_free():
+	walking_free = false
+	walking_free = true
+
 
 
 	
