@@ -12,28 +12,23 @@ func _ready():
 	$TextureRect.texture = itemimage
 	$PanelContainer/HBoxContainer/Label.text = itemprice
 	$Label2.text = itemdescription
-	if GameManager.money >= int(itemprice):
-		label_3.visible = false
-	else:
+	
+func _process(delta: float) -> void:
+	if GameManager.walking_free == false:
+		label_4.visible = false
+	elif GameManager.money < int(itemprice):
 		label_3.visible = true
+	else:
+		label_3.visible = false
 		
 		
 
 func _on_button_pressed() -> void:
 	GameManager.play_button_click()
+	label_4.visible = true
 	if GameManager.money>=int(itemprice):
 		GameManager.loose_money_smooth(int(itemprice))
-		label_4.visible = true
-		if itemname == "T.P. TO SELL":
-			GameManager.TP_to_sell = true
-		elif itemname == "SELL AT SPOT":
-			GameManager.Sell_at_spot = true
-		elif itemname == "Cheap Walking":
-			GameManager.cheap_walking = true
-			GameManager.walking_value = 4
-		elif itemname == "Valuable Pigs":
-			GameManager.pig_value = 200
-		elif itemname == "Walking is free (5min)":
+		if itemname == "Walking is free (5min)":
 			GameManager.walking_free = true
 			GameManager.walking_value = 0
 		elif itemname == "2x Everything (5min)":

@@ -10,6 +10,7 @@ extends Control
 @onready var color_rect: ColorRect = $ColorRect2
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	sprite.scale = Vector2(1,1)
 	color_rect.color = Color("#030303")
 	label.visible = true

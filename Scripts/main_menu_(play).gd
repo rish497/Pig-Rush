@@ -6,6 +6,7 @@ extends Control
 
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	GameManager.play_music()
 	about.scale = Vector2(0.0, 0.0)
 	await get_tree().process_frame

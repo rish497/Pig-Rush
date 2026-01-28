@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cm3xuwmqmyiji"]
 
-[ext_resource type="Script" uid="uid://b1gnc55lalwx7" path="res://Scripts/shop_items.gd" id="1_n8ne1"]
+[ext_resource type="Script" uid="uid://cpo1kfxwqllnp" path="res://Scripts/shop_potions.gd" id="1_n8ne1"]
 [ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="2_xjk4g"]
 [ext_resource type="Texture2D" uid="uid://f58gboy335u2" path="res://icon.svg" id="3_y6p8r"]
 [ext_resource type="Texture2D" uid="uid://djs52ooum31q" path="res://Assets/image (3).png" id="4_iyfxa"]
@@ -23,12 +23,12 @@ corner_radius_bottom_left = 20
 shadow_color = Color(0.9647059, 0.7882353, 0.7882353, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0urpg"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0.6, 0.6, 0.6, 0.4745098)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(0.9103162, 0.069008075, 0.42549804, 1)
+border_color = Color(0.89903986, 0.19302109, 0.20778307, 1)
 corner_radius_top_left = 23
 corner_radius_top_right = 23
 corner_radius_bottom_right = 23
@@ -74,7 +74,7 @@ bg_color = Color(0.23566183, 1.8199441e-07, 8.4228816e-08, 0.9019608)
 bg_color = Color(0, 0.4745098, 0.08627451, 0.80784315)
 
 [node name="Panel" type="Panel"]
-clip_children = 2
+clip_children = 1
 custom_minimum_size = Vector2(300, 200)
 anchors_preset = -1
 anchor_right = 0.0031388865
@@ -205,8 +205,16 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0urpg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l4s1s")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_85auk")
 
-[node name="Label3" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 visible = false
+layout_mode = 0
+offset_left = -1.9230788
+offset_top = -0.9615394
+offset_right = 300.96182
+offset_bottom = 205.76942
+color = Color(0.30980393, 0.09803922, 0.09803922, 0.60784316)
+
+[node name="Label3" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_top = 0.9615394
 offset_right = 302.88492
@@ -218,15 +226,22 @@ text = "NOT ENOUGH MONEY "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
+layout_mode = 0
+offset_top = -2.8846183
+offset_right = 303.84644
+offset_bottom = 205.76942
+color = Color(0.105882354, 0.45882353, 0.15686275, 0.6431373)
+
+[node name="Label4" type="Label" parent="ColorRect2"]
 layout_mode = 0
 offset_right = 300.96182
 offset_bottom = 200.96173
 theme_override_fonts/font = ExtResource("2_xjk4g")
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_85auk")
-text = "ALREADY BOUGHT"
+text = "POTION IS ALREADY RUNNING"
 horizontal_alignment = 1
 vertical_alignment = 1
 

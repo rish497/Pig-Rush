@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7mn41o7phbs8"]
+
+[ext_resource type="Script" uid="uid://ce8b5o2oy8t5u" path="res://Scripts/potion_effect.gd" id="1_y7t8i"]
+[ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="2_slsl7"]
+[ext_resource type="FontFile" uid="uid://btgsyxn5r8w7h" path="res://Assets/Minecraft.ttf" id="3_3yh37"]
+[ext_resource type="Texture2D" uid="uid://f58gboy335u2" path="res://icon.svg" id="4_slsl7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7t8i"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_puut3"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Gradient" id="Gradient_opwd8"]
+offsets = PackedFloat32Array(0, 0.6533333, 1)
+colors = PackedColorArray(0.8090872, 0.77203226, 0.09569726, 1, 0.8650883, 0.7261708, 0.06762607, 1, 1, 0.6156863, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_puut3"]
+gradient = SubResource("Gradient_opwd8")
+fill = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jjkj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5532998, 0.33734074, 2.8878452e-07, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1ulq"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Panel" type="Panel"]
+offset_left = -1.0
+offset_top = 590.0
+offset_right = 103.0
+offset_bottom = 694.0
+rotation = -0.011290729
+scale = Vector2(0.5745573, 0.5745573)
+theme_override_styles/panel = SubResource("StyleBoxFlat_y7t8i")
+script = ExtResource("1_y7t8i")
+title = "Walking is Free"
+time_seconds = 5
+
+[node name="Panel" type="Panel" parent="."]
+clip_children = 1
+layout_mode = 0
+offset_right = 108.1203
+offset_bottom = 105.1322
+theme_override_styles/panel = SubResource("StyleBoxFlat_puut3")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.016
+offset_right = 1.888916
+offset_bottom = -1.2702942
+texture = SubResource("GradientTexture2D_puut3")
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_right = 108.12036
+offset_bottom = 105.543976
+theme_override_styles/panel = SubResource("StyleBoxFlat_8jjkj")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 99.77273
+offset_top = -67.87787
+offset_right = 301.7727
+offset_bottom = -19.877838
+scale = Vector2(1.52, 1.52)
+theme_override_styles/panel = SubResource("StyleBoxFlat_k1ulq")
+
+[node name="Title" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 202.00003
+offset_bottom = 28.000008
+theme_override_fonts/font = ExtResource("2_slsl7")
+theme_override_font_sizes/font_size = 23
+text = "This is Label"
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = 0.65789753
+offset_top = 24.99999
+offset_right = 202.65793
+offset_bottom = 44.999992
+theme_override_fonts/font = ExtResource("3_3yh37")
+theme_override_font_sizes/font_size = 20
+text = "1:00"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 10.886394
+offset_top = 10.123553
+offset_right = 96.26334
+offset_bottom = 94.9659
+texture = ExtResource("4_slsl7")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

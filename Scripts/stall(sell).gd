@@ -32,9 +32,9 @@ func sold():
 		show_message("No more bacon left to sell!")
 		error_2.play()
 	else:
-		print("Pigs Sold!")
+		show_message("Pigs Sold!")
 		money_sound.play()
-		GameManager.add_money_smooth(GameManager.pig * 100)
+		GameManager.add_money_smooth(GameManager.pig * GameManager.pig_value)
 		GameManager.pig = 0
 		
 func show_message_permanent(text:String):

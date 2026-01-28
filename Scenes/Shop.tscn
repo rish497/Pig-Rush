@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://ccser5pvt2jeb"]
+[gd_scene load_steps=21 format=3 uid="uid://ccser5pvt2jeb"]
 
 [ext_resource type="Script" uid="uid://2xnmxsk83k1p" path="res://Scripts/shop.gd" id="1_e5ji4"]
 [ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="2_i4qx4"]
+[ext_resource type="Texture2D" uid="uid://cv7wmgh4kn2h7" path="res://Assets/image-removebg-preview (16).png" id="2_m1c0q"]
+[ext_resource type="Texture2D" uid="uid://cdyd1ionkv52k" path="res://Assets/image-removebg-preview (20).png" id="3_dael7"]
 [ext_resource type="PackedScene" uid="uid://bue1w6d7w2oe6" path="res://Scenes/ShopItems.tscn" id="3_e5ji4"]
 [ext_resource type="Texture2D" uid="uid://chwef47nnvxxh" path="res://Assets/pngtree-checkered-square-pattern-png-image_11898394.png" id="4_ckylj"]
 [ext_resource type="Texture2D" uid="uid://bkmulvvxr8l34" path="res://Assets/12301789.png" id="5_ckylj"]
@@ -9,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dewx0r1a0keeb" path="res://Assets/3142740.png" id="6_wndna"]
 [ext_resource type="Texture2D" uid="uid://ywnxequj2r2t" path="res://Assets/878580_hide_512x512.png" id="7_2aaoe"]
 [ext_resource type="PackedScene" uid="uid://cm3xuwmqmyiji" path="res://Scenes/ShopPotions.tscn" id="8_ct2yw"]
+[ext_resource type="Texture2D" uid="uid://hw73b3ysder0" path="res://Assets/28-288275_cash-cash-pixel-art-png.png" id="8_r8bg4"]
 [ext_resource type="Texture2D" uid="uid://dwi76wst3xtde" path="res://Assets/2742687.png" id="9_ccd4q"]
-[ext_resource type="Texture2D" uid="uid://dtyu85c0lb74q" path="res://Assets/7946001.png" id="10_1mgah"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5ji4"]
 bg_color = Color(1, 1, 1, 1)
@@ -24,9 +26,57 @@ corner_radius_top_right = 40
 corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8bg4"]
+bg_color = Color(0.6737013, 0.46599984, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 9
+border_color = Color(0.5040744, 0.34212407, 0.64507234, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dael7"]
+bg_color = Color(0.61720884, 0.3179336, 0.9999946, 1)
+border_width_left = 3
+border_width_top = 9
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.34549165, 0.1982123, 0.4970445, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gufdo"]
+bg_color = Color(0.99542624, 0.3385126, 0.36245123, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 9
+border_color = Color(0.7902991, 0, 0.28359887, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ox0pj"]
+bg_color = Color(0.98845655, 0.07486341, 0.23274347, 1)
+border_width_left = 3
+border_width_top = 9
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.60691375, 0.01884959, 0.17731413, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1mgah"]
 texture = ExtResource("4_ckylj")
-modulate_color = Color(1, 1, 1, 0.023529412)
+modulate_color = Color(1, 1, 1, 0.039215688)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ccd4q"]
 texture = ExtResource("6_wndna")
@@ -47,6 +97,32 @@ offset_top = 56.0
 offset_right = 904.0
 offset_bottom = 600.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_e5ji4")
+
+[node name="Upgrade" type="Button" parent="ShopPanel"]
+layout_mode = 0
+offset_left = 463.0
+offset_top = -33.0
+offset_right = 523.0
+offset_bottom = 38.068184
+theme_override_styles/normal = SubResource("StyleBoxFlat_r8bg4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dael7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r8bg4")
+icon = ExtResource("2_m1c0q")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Potions" type="Button" parent="ShopPanel"]
+layout_mode = 0
+offset_left = 534.0
+offset_top = -33.0
+offset_right = 594.0
+offset_bottom = 38.068184
+theme_override_styles/normal = SubResource("StyleBoxFlat_gufdo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ox0pj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gufdo")
+icon = ExtResource("3_dael7")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Label" type="Label" parent="ShopPanel"]
 layout_mode = 0
@@ -137,6 +213,16 @@ itemimage = ExtResource("7_2aaoe")
 itemprice = "2000"
 itemdescription = "Walking will become cheaper"
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel4" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("3_e5ji4")]
+layout_mode = 2
+itemname = "Valuable Pigs"
+itemimage = ExtResource("8_r8bg4")
+itemprice = "1000"
+itemdescription = "Pigs are now worth 200"
+
 [node name="HBoxContainer3" type="HBoxContainer" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
@@ -161,13 +247,6 @@ itemimage = ExtResource("9_ccd4q")
 itemprice = "200"
 itemdescription = "Walking costs nothing for 5 minutes"
 
-[node name="Panel2" parent="ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("8_ct2yw")]
-layout_mode = 2
-itemname = "2x Everything (5min)"
-itemimage = ExtResource("10_1mgah")
-itemprice = "500"
-itemdescription = "The value of pigs and the amount earned is 2x"
-
 [node name="Label2" type="Label" parent="ShopPanel"]
 layout_mode = 0
 offset_left = 21.0
@@ -175,3 +254,6 @@ offset_top = -56.0
 offset_right = 128.82433
 offset_bottom = 45.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_ccd4q")
+
+[connection signal="pressed" from="ShopPanel/Upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="pressed" from="ShopPanel/Potions" to="." method="_on_potions_pressed"]

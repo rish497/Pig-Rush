@@ -1,5 +1,5 @@
 extends Node
-
+signal walking_free_changed(value: bool)
 var pig = 0
 var money = 1000000
 var arrow = load("res://Assets/Pointer3.png")
@@ -9,13 +9,17 @@ var collect_sound = false
 var TP_to_sell = false
 var Sell_at_spot = false
 var cheap_walking = false
-var walking_free = false
+var walking_free := false:
+	set(value):
+		if walking_free == value:
+			return
+		walking_free = value
+		walking_free_changed.emit(value)
 var twointo = false
+var gift_claimed := false
 @onready var button_click: AudioStreamPlayer = $ButtonClick
 @onready var music: AudioStreamPlayer = $Music
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
-var gift_claimed := false
-@onready var collect: AudioStreamPlayer = $AudioStreamPlayer
+@onready var collect: AudioStreamPlayer = $collect
 
 func play_button_click():
 	if button_click.playing:
@@ -24,10 +28,7 @@ func play_button_click():
 	
 func _ready():
 	Input.set_custom_mouse_cursor(arrow)
-	if collect_sound == true:
-		collect.play()
-		await collect.finished
-		collect_sound = false
+
 
 func play_music():
 	if not music.playing:
@@ -61,6 +62,12 @@ func loose_money_smooth(amount: int):
 		end_value,
 		0.3 
 	)
+
+func _process(delta: float) -> void:
+	if collect_sound == true:
+		collect.play()
+		await collect.finished
+		collect_sound = false
 
 	
 

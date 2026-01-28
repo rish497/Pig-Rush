@@ -15,6 +15,6 @@ stream = ExtResource("2_ef0r5")
 stream = ExtResource("3_cxhmk")
 volume_db = -10.016
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="collect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_uvxo2")
 volume_db = 3.963

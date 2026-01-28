@@ -4,9 +4,8 @@ var delta = -1
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
-func _on_body_entered(body: Node2D):
+func _on_body_entered(body: CharacterBody2D):
 		GameManager.pig +=1
-		animated_sprite_2d.visible = false
 		GameManager.collect_sound = true
 		queue_free()
 

@@ -203,8 +203,14 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0urpg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l4s1s")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_85auk")
 
-[node name="Label3" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 visible = false
+layout_mode = 0
+offset_right = 204.80789
+offset_bottom = 205.76942
+color = Color(0.30980393, 0.09803922, 0.09803922, 0.60784316)
+
+[node name="Label3" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_right = 212.5002
 offset_bottom = 200.96173
@@ -215,8 +221,14 @@ text = "NOT ENOUGH MONEY "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
+layout_mode = 0
+offset_right = 204.80789
+offset_bottom = 205.76942
+color = Color(0.105882354, 0.45882353, 0.15686275, 0.6431373)
+
+[node name="Label4" type="Label" parent="ColorRect2"]
 layout_mode = 0
 offset_right = 212.5002
 offset_bottom = 200.96173

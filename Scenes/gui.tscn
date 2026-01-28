@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cvvdte57mtkoo" path="res://Assets/PastelUIFree.png" id="5_8kag3"]
 [ext_resource type="Texture2D" uid="uid://cpjx2hl4nlma0" path="res://Assets/PastelUIFree (1) (3).png" id="5_gnd4w"]
 [ext_resource type="PackedScene" uid="uid://ccser5pvt2jeb" path="res://Scenes/Shop.tscn" id="6_3w84o"]
-[ext_resource type="Texture2D" uid="uid://bxhn4h8g8lryo" path="res://Assets/Border/ic_locked.png" id="7_gnd4w"]
+[ext_resource type="Texture2D" uid="uid://gtqwyh44yphf" path="res://Assets/3408435.png" id="7_gnd4w"]
+[ext_resource type="PackedScene" uid="uid://b7mn41o7phbs8" path="res://Scenes/PotionEffect.tscn" id="9_bf1fa"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah32c"]
 texture = ExtResource("1_bm56d")
@@ -58,9 +59,6 @@ region_rect = Rect2(175.92345, 112.91609, 14.076691, 14.076698)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nc5vy"]
 texture = ExtResource("5_gnd4w")
 region_rect = Rect2(192.07678, 112.76646, 14.007355, 14.146042)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s45yd"]
-texture = ExtResource("7_gnd4w")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ls8gd"]
 texture = ExtResource("5_gnd4w")
@@ -159,14 +157,13 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_3tx2u")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nc5vy")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3tx2u")
 
-[node name="Label" type="Label" parent="TPtoSell"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 8.0
-offset_right = 97.0
-offset_bottom = 96.0
-scale = Vector2(0.76, 0.76)
-theme_override_styles/normal = SubResource("StyleBoxTexture_s45yd")
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 930.0
+offset_top = 257.0
+offset_right = 1442.0
+offset_bottom = 769.0
+scale = Vector2(0.16599406, 0.1646927)
+texture = ExtResource("7_gnd4w")
 
 [node name="SellAtSpot" type="Button" parent="."]
 offset_left = 928.0
@@ -178,14 +175,13 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ea75s")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ls8gd")
 expand_icon = true
 
-[node name="Label" type="Label" parent="SellAtSpot"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 8.0
-offset_right = 97.0
-offset_bottom = 96.0
-scale = Vector2(0.76, 0.76)
-theme_override_styles/normal = SubResource("StyleBoxTexture_s45yd")
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 930.0
+offset_top = 377.0
+offset_right = 1442.0
+offset_bottom = 889.0
+scale = Vector2(0.16599406, 0.1646927)
+texture = ExtResource("7_gnd4w")
 
 [node name="SHOP" parent="." instance=ExtResource("6_3w84o")]
 offset_left = -154.0
@@ -203,6 +199,12 @@ offset_bottom = 112.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_603go")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6wv5k")
 theme_override_styles/hover = SubResource("StyleBoxTexture_t4dsw")
+
+[node name="Panel" parent="." instance=ExtResource("9_bf1fa")]
+offset_left = 13.0
+offset_top = 576.0
+offset_right = 117.0
+offset_bottom = 680.0
 
 [connection signal="pressed" from="Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
