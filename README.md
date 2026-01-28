@@ -11,7 +11,7 @@ Hello and welcome to my game *oink*.
 2. Collect the pigs around the map
 3. Sell the colected pigs to the butcher
 4. EVERYTHING costs coins
-5. ***GOAL***: To Escape this world by collecting the 3 keys and the escpae door hidden in the map
+5. ***GOAL***: Make the Most money!
 6. Enjoy the Game
 
 # Websites Used 🌐
