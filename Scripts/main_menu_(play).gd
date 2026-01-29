@@ -32,6 +32,7 @@ func _on_button_pressed() -> void:
 		InputId.visible = true
 	else:
 		get_tree().change_scene_to_file("res://Scenes/Main Game.tscn")
+		GameManager.timer_start()
 
 
 func _on_button_2_pressed() -> void:

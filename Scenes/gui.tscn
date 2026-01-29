@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b37gg8qcstlg"]
+[gd_scene load_steps=45 format=3 uid="uid://b37gg8qcstlg"]
 
 [ext_resource type="Texture2D" uid="uid://b56f1ut3tly8k" path="res://Assets/piggy_sheet.png" id="1_bm56d"]
 [ext_resource type="Script" uid="uid://72fpe5d54ype" path="res://Scripts/gui.gd" id="1_m6o0h"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://b7mn41o7phbs8" path="res://Scenes/PotionEffect.tscn" id="9_bf1fa"]
 [ext_resource type="Texture2D" uid="uid://bnrluyd0r85wh" path="res://Assets/Speed_JE3_BE2.png" id="10_q52sk"]
 [ext_resource type="PackedScene" uid="uid://dlijjveelucwx" path="res://Scenes/PauseGame.tscn" id="11_c5g4q"]
+[ext_resource type="Texture2D" uid="uid://b7wvarjylaxnx" path="res://Assets/HealthUI.png" id="13_705sf"]
+[ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="14_6wv5k"]
+[ext_resource type="PackedScene" uid="uid://dbltdiufbgp5h" path="res://Scenes/Died.tscn" id="14_603go"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah32c"]
 texture = ExtResource("1_bm56d")
@@ -42,20 +45,6 @@ texture = ExtResource("5_8kag3")
 region_rect = Rect2(175.946, 97.072, 14.024, 14.058)
 modulate_color = Color(0.7254902, 0.7254902, 0.7254902, 1)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_705sf"]
-load_path = "res://.godot/imported/PastelUIFree.png-f182f635939c4d092484547e70a38b3f.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s45yd"]
-texture = SubResource("CompressedTexture2D_705sf")
-region_rect = Rect2(175.8629, 113.027466, 14.097916, 14.012207)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ls8gd"]
-load_path = "res://.godot/imported/PastelUIFree.png-f182f635939c4d092484547e70a38b3f.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktflg"]
-texture = SubResource("CompressedTexture2D_ls8gd")
-region_rect = Rect2(192.04079, 112.94726, 13.907333, 14.036507)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s7psx"]
 texture = ExtResource("5_8kag3")
 region_rect = Rect2(192.08781, 144.96724, 13.938049, 14.146072)
@@ -64,6 +53,20 @@ region_rect = Rect2(192.08781, 144.96724, 13.938049, 14.146072)
 texture = ExtResource("5_8kag3")
 region_rect = Rect2(175.863, 144.694, 14.098, 14.213)
 modulate_color = Color(0.7254902, 0.7254902, 0.7254902, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_603go"]
+load_path = "res://.godot/imported/PastelUIFree.png-f182f635939c4d092484547e70a38b3f.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s45yd"]
+texture = SubResource("CompressedTexture2D_603go")
+region_rect = Rect2(175.99487, 113.017395, 13.965942, 14.0065155)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ls8gd"]
+load_path = "res://.godot/imported/PastelUIFree.png-f182f635939c4d092484547e70a38b3f.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktflg"]
+texture = SubResource("CompressedTexture2D_ls8gd")
+region_rect = Rect2(192.08781, 112.93237, 13.938049, 13.972519)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3tx2u"]
 texture = ExtResource("5_gnd4w")
@@ -94,10 +97,102 @@ texture = ExtResource("5_8kag3")
 region_rect = Rect2(175.926, 128.934, 14.041, 13.926)
 modulate_color = Color(1, 0.8156863, 1, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_603go"]
+atlas = ExtResource("13_705sf")
+region = Rect2(0, 66, 33, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wv5k"]
+atlas = ExtResource("13_705sf")
+region = Rect2(0, 55, 33, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4dsw"]
+atlas = ExtResource("13_705sf")
+region = Rect2(0, 44, 33, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tx2u"]
+atlas = ExtResource("13_705sf")
+region = Rect2(0, 33, 33, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc5vy"]
+atlas = ExtResource("13_705sf")
+region = Rect2(0, 22, 33, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s45yd"]
+atlas = ExtResource("13_705sf")
+region = Rect2(0, 11, 33, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls8gd"]
+atlas = ExtResource("13_705sf")
+region = Rect2(0, 0, 33, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ea75s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_603go")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wv5k")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4dsw")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tx2u")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc5vy")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s45yd")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls8gd")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_705sf"]
+bg_color = Color(1, 0, 0, 0.6745098)
+
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_m6o0h")
 
-[node name="Pig Collector Labe" type="Label" parent="."]
+[node name="Node" type="Node" parent="."]
+
+[node name="Pig Collector Labe" type="Label" parent="Node"]
 anchors_preset = -1
 anchor_left = 0.961
 anchor_top = 0.064
@@ -110,7 +205,7 @@ offset_bottom = 133.66692
 scale = Vector2(0.37163642, 0.37163642)
 theme_override_styles/normal = SubResource("StyleBoxTexture_ah32c")
 
-[node name="pig value" type="Label" parent="."]
+[node name="pig value" type="Label" parent="Node"]
 anchors_preset = -1
 anchor_left = 0.901
 anchor_top = 0.074
@@ -126,7 +221,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Money" type="Label" parent="."]
+[node name="Money" type="Label" parent="Node"]
 anchors_preset = -1
 anchor_left = 0.961
 anchor_top = 0.20400001
@@ -139,7 +234,7 @@ offset_bottom = 157.54573
 scale = Vector2(0.37163642, 0.37163642)
 theme_override_styles/normal = SubResource("StyleBoxTexture_m6o0h")
 
-[node name="Money Value" type="Label" parent="."]
+[node name="Money Value" type="Label" parent="Node"]
 anchors_preset = -1
 anchor_left = 0.90500003
 anchor_top = 0.21000001
@@ -155,7 +250,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Shop" type="Button" parent="."]
+[node name="Shop" type="Button" parent="Node"]
 anchors_preset = -1
 anchor_left = 0.9480001
 anchor_top = 0.46300003
@@ -169,7 +264,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_3w84o")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_8kag3")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3w84o")
 
-[node name="Pause" type="Button" parent="."]
+[node name="Pause" type="Button" parent="Node"]
 anchors_preset = -1
 anchor_left = 0.9480001
 anchor_top = 0.648
@@ -183,21 +278,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_bf1fa")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q52sk")
 theme_override_styles/hover = SubResource("StyleBoxTexture_c5g4q")
 
-[node name="Leaderboard" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.846
-anchor_top = 0.81900007
-anchor_right = 0.846
-anchor_bottom = 0.81900007
-offset_left = -45.59204
-offset_top = -41.712036
-offset_right = 42.40796
-offset_bottom = 46.287964
-theme_override_styles/normal = SubResource("StyleBoxTexture_s45yd")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_ktflg")
-theme_override_styles/hover = SubResource("StyleBoxTexture_s45yd")
-
-[node name="Settings" type="Button" parent="."]
+[node name="Settings" type="Button" parent="Node"]
 anchors_preset = -1
 anchor_left = 0.9480001
 anchor_top = 0.82100004
@@ -211,7 +292,21 @@ theme_override_styles/normal = ExtResource("7_s7psx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_s7psx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_705sf")
 
-[node name="TPtoSell" type="Button" parent="."]
+[node name="Leaderboard" type="Button" parent="Node"]
+anchors_preset = -1
+anchor_left = 0.9480001
+anchor_top = 0.82100004
+anchor_right = 0.9480001
+anchor_bottom = 0.82100004
+offset_left = -164.09607
+offset_top = -44.007996
+offset_right = -76.09607
+offset_bottom = 43.992004
+theme_override_styles/normal = SubResource("StyleBoxTexture_s45yd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ktflg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s45yd")
+
+[node name="TPtoSell" type="Button" parent="Node"]
 clip_children = 2
 anchors_preset = -1
 anchor_left = 0.84400004
@@ -226,7 +321,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_3tx2u")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nc5vy")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3tx2u")
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="TextureRect3" type="TextureRect" parent="Node"]
 anchors_preset = -1
 anchor_left = 0.84400004
 anchor_top = 0.46400002
@@ -240,7 +335,7 @@ scale = Vector2(0.16599406, 0.1646927)
 texture = ExtResource("7_c5g4q")
 expand_mode = 1
 
-[node name="SellAtSpot" type="Button" parent="."]
+[node name="SellAtSpot" type="Button" parent="Node"]
 clip_children = 2
 anchors_preset = -1
 anchor_left = 0.84400004
@@ -256,7 +351,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ea75s")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ls8gd")
 expand_icon = true
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="Node"]
 anchors_preset = -1
 anchor_left = 0.84400004
 anchor_top = 0.647
@@ -270,7 +365,7 @@ scale = Vector2(0.16599406, 0.1646927)
 texture = ExtResource("7_c5g4q")
 expand_mode = 1
 
-[node name="SHOP" parent="." instance=ExtResource("6_3w84o")]
+[node name="SHOP" parent="Node" instance=ExtResource("6_3w84o")]
 visible = false
 anchors_preset = -1
 anchor_left = 0.36600003
@@ -285,7 +380,7 @@ grow_horizontal = 1
 grow_vertical = 0
 pivot_offset = Vector2(575, 324)
 
-[node name="Button" type="Button" parent="SHOP"]
+[node name="Button" type="Button" parent="Node/SHOP"]
 layout_mode = 0
 offset_left = 847.0
 offset_top = 32.0
@@ -295,7 +390,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_603go")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6wv5k")
 theme_override_styles/hover = SubResource("StyleBoxTexture_t4dsw")
 
-[node name="Panel" parent="." instance=ExtResource("9_bf1fa")]
+[node name="Panel" parent="Node" instance=ExtResource("9_bf1fa")]
 visible = false
 anchors_preset = -1
 anchor_left = 0.038000003
@@ -308,13 +403,60 @@ offset_right = 73.224
 offset_bottom = 74.768005
 image = ExtResource("10_q52sk")
 
-[node name="Control" parent="." instance=ExtResource("11_c5g4q")]
+[node name="Control" parent="Node" instance=ExtResource("11_c5g4q")]
 visible = false
 offset_left = -1.0
 offset_right = -1.0
 
-[connection signal="pressed" from="Shop" to="." method="_on_shop_pressed"]
-[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="Leaderboard" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="SHOP/Button" to="." method="_on_button_pressed"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node"]
+position = Vector2(110.625015, 39.875004)
+scale = Vector2(6.3863635, 6.3863635)
+sprite_frames = SubResource("SpriteFrames_ea75s")
+animation = &"6"
+autoplay = "6"
+
+[node name="Leaderboard2" parent="Node" instance=ExtResource("14_6wv5k")]
+visible = false
+position = Vector2(-107, -25)
+
+[node name="Died" type="Node" parent="."]
+
+[node name="Panel" type="Panel" parent="Died"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.5
+offset_top = -327.0
+offset_right = 576.5
+offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_705sf")
+
+[node name="Label" type="Label" parent="Died/Panel"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = 3.0
+offset_right = 1151.5
+offset_bottom = 653.0
+theme_override_fonts/font = ExtResource("3_m6o0h")
+theme_override_font_sizes/font_size = 50
+text = "YOU DIED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" parent="Died" instance=ExtResource("14_603go")]
+visible = false
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = -3.0
+
+[connection signal="pressed" from="Node/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="Node/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Node/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Node/Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="Node/SHOP/Button" to="." method="_on_button_pressed"]

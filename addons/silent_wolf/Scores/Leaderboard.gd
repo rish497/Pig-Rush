@@ -5,12 +5,14 @@ const ScoreItem = preload("ScoreItem.tscn")
 const SWLogger = preload("res://addons/silent_wolf/utils/SWLogger.gd")
 
 var list_index = 0
-# Replace the leaderboard name if you're not using the default leaderboard
 var ld_name = "main"
 var max_scores = 10
-
+var player_name = "hi"
+var score = GameManager.score
+var ldboard_name = "main"
 
 func _ready():
+	#SilentWolf.Scores.save_score(player_name, score, ldboard_name)
 	print("SilentWolf.Scores.leaderboards: " + str(SilentWolf.Scores.leaderboards))
 	print("SilentWolf.Scores.ldboard_config: " + str(SilentWolf.Scores.ldboard_config))
 	var scores = SilentWolf.Scores.scores
@@ -121,7 +123,4 @@ func clear_leaderboard() -> void:
 
 
 func _on_CloseButton_pressed() -> void:
-	var scene_name = SilentWolf.scores_config.open_scene_on_close
-	SWLogger.info("Closing SilentWolf leaderboard, switching to scene: " + str(scene_name))
-	#global.reset()
-	get_tree().change_scene_to_file(scene_name)
+	hide()

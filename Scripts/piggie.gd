@@ -173,15 +173,41 @@ func update_animation(direction: float) -> void:
 		sprite.play("Idle")
 
 func killplayer():
-	can_move = false
-	death.play()
-	await get_tree().create_timer(1).timeout
-	Engine.time_scale = 0.85
-	velocity = Vector2.ZERO
-	global_position = %RespawnPoint.global_position
-	await get_tree().create_timer(0.1).timeout
-	can_move = true
+	if GameManager.health > 1:
+		GameManager.health -= 1
+		death.play()
+		await revive_player()
+	else:
+		death.play()
+		await revive_player()
+		await get_tree().create_timer(.4).timeout
+		GameManager.try_submit_best_score()
+		await play_death_animation()
+		GameManager.health = 0
 
+
+func play_death_animation() -> void:
+	set_physics_process(false)
+	set_process(false)
+
+	var body: AnimatedSprite2D = $AnimatedSprite2D
+	body.stop()
+	var ghost := body.duplicate()
+	ghost.modulate = Color(1, 1, 1, 0.8)
+	ghost.z_index += 1
+	add_child(ghost)
+
+	var body_tween = get_tree().create_tween()
+	body_tween.tween_property(body, "modulate:a", 0.0, 0.3)
+
+	var ghost_tween = get_tree().create_tween()
+	ghost_tween.tween_property(ghost, "position:y", ghost.position.y - 60, 1.0)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_OUT)
+	ghost_tween.tween_property(ghost, "modulate:a", 0.0, 1.0)
+
+	await ghost_tween.finished
+	ghost.queue_free()
 
 func _on_death_zone_body_entered(body: Node2D) -> void:
 	if body != self:
@@ -191,7 +217,23 @@ func _on_death_zone_body_entered(body: Node2D) -> void:
 	Engine.time_scale = .85
 	killplayer()
 	
+func revive_player():
+	can_move = false
+	velocity = Vector2.ZERO
+	Engine.time_scale = 0.6
 
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 0.25)
+	await tween.finished
+
+	global_position = %RespawnPoint.global_position
+
+	var tween_in = create_tween()
+	tween_in.tween_property(self, "modulate:a", 1.0, 0.25)
+	await tween_in.finished
+	play_heart_damage_anim()
+	Engine.time_scale = 1.0
+	can_move = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	on_ladder = true
@@ -200,3 +242,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	on_ladder = false
 	sprite.play("Idle")
+	
+func play_heart_damage_anim():
+	var tween = create_tween()
+
+	tween.tween_property(self, "position:x", position.x - 6, 0.05)
+	tween.tween_property(self, "position:x", position.x + 6, 0.05)
+	tween.tween_property(self, "position:x", position.x, 0.05)
+
+	tween.tween_property(self, "modulate", Color(1, 0.3, 0.3), 0.05)
+	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
