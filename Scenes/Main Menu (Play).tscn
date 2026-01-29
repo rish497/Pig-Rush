@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dx8lsqloqup5y"]
+[gd_scene load_steps=46 format=3 uid="uid://dx8lsqloqup5y"]
 
 [ext_resource type="Script" uid="uid://cku3sx47kju38" path="res://Scripts/main_menu_(play).gd" id="1_vrfmk"]
 [ext_resource type="Texture2D" uid="uid://cvvdte57mtkoo" path="res://Assets/PastelUIFree.png" id="1_x1upi"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cdhphgyknu0od" path="res://Assets/Screenshot 2026-01-26 024733.png" id="9_7jge0"]
 [ext_resource type="Texture2D" uid="uid://bywp38dla6kun" path="res://Assets/Screenshot 2026-01-26 025347.png" id="10_d1oks"]
 [ext_resource type="Texture2D" uid="uid://cjtjwu2cmbwa7" path="res://Assets/Pig Panic! pixel art logo.png" id="11_7jge0"]
+[ext_resource type="Texture2D" uid="uid://rq7quaj7251l" path="res://Assets/GameMascot.png" id="12_d1oks"]
+[ext_resource type="PackedScene" uid="uid://srrh6cm640yg" path="res://Scenes/InputData.tscn" id="13_feh14"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1oks"]
 atlas = ExtResource("2_7jge0")
@@ -323,6 +325,12 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_r22a7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r22a7")
 text = "CREATOR"
 
+[node name="GameMascot" type="Sprite2D" parent="."]
+position = Vector2(1096, 55.999992)
+rotation = -2.3561945
+scale = Vector2(0.47256973, 0.47256973)
+texture = ExtResource("12_d1oks")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="About" type="Panel" parent="CanvasLayer"]
@@ -412,6 +420,14 @@ offset_bottom = 324.5
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+
+[node name="Control" parent="." instance=ExtResource("13_feh14")]
+visible = false
+layout_mode = 1
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = -3.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

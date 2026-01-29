@@ -18,10 +18,14 @@ var walking_free := false:
 var twointo = false
 var gift_claimed := false
 var default_walking_value := 1
-
+var score = money
+var player_name:String
+var profile_made = false
 @onready var button_click: AudioStreamPlayer = $ButtonClick
 @onready var music: AudioStreamPlayer = $Music
 @onready var collect: AudioStreamPlayer = $collect
+var ldboard_name = "main"
+var last_saved_score := -1
 
 func play_button_click():
 	if button_click.playing:
@@ -29,6 +33,13 @@ func play_button_click():
 	button_click.play()
 	
 func _ready():
+	SilentWolf.configure({
+		"api_key": "iXNVMVArkV22UrBQoZSU33u9Q0oODSG97KMhTnBH",
+		"game_id": "PigPanic",
+		"log_level": 1
+		})
+	SilentWolf.configure_scores({"open_scene_on_close": "res://scenes/MainPage.tscn"})
+
 	Input.set_custom_mouse_cursor(arrow)
 
 
@@ -66,10 +77,15 @@ func loose_money_smooth(amount: int):
 	)
 
 func _process(delta: float) -> void:
+	score = money
 	if collect_sound == true:
 		collect.play()
 		await collect.finished
 		collect_sound = false
+	if profile_made and score != last_saved_score:
+		last_saved_score = score
+		SilentWolf.Scores.save_score(player_name, score, ldboard_name)
+
 
 func activate_walking_free():
 	walking_free = false

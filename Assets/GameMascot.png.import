@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlaq3f3hiu07f"
-path="res://.godot/imported/godotwaka.png-ef0518417b4f997d237759e5551dd05d.ctex"
+uid="uid://rq7quaj7251l"
+path="res://.godot/imported/GameMascot.png-af1cb80835f6f61f997c39f3baa7907a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/godotwaka.png"
-dest_files=["res://.godot/imported/godotwaka.png-ef0518417b4f997d237759e5551dd05d.ctex"]
+source_file="res://Assets/GameMascot.png"
+dest_files=["res://.godot/imported/GameMascot.png-af1cb80835f6f61f997c39f3baa7907a.ctex"]
 
 [params]
 

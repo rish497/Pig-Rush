@@ -3,6 +3,7 @@ extends Control
 @onready var exit: Button = $"CanvasLayer/About/BuyNow!"
 @onready var color_rect_2: ColorRect = $ColorRect2
 @onready var about: Panel = $CanvasLayer/About
+@onready var InputId: Control = $Control
 
 
 func _ready() -> void:
@@ -23,10 +24,14 @@ func animate_panel_out():
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(about, "scale", Vector2(0, 0), 0.6)
+@onready var control: Control = $Control
 	
 func _on_button_pressed() -> void:
 	GameManager.play_button_click()
-	get_tree().change_scene_to_file("res://Scenes/Main Game.tscn")
+	if GameManager.profile_made == false:
+		InputId.visible = true
+	else:
+		get_tree().change_scene_to_file("res://Scenes/Main Game.tscn")
 
 
 func _on_button_2_pressed() -> void:

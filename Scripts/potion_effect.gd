@@ -16,7 +16,6 @@ func _ready():
 	current_time = time_seconds
 
 	$Panel2/Time.text = format_time(current_time)
-
 	$TextureRect.texture = image
 	$Panel2/Title.text = title
 

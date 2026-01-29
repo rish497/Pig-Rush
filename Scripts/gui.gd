@@ -2,12 +2,14 @@ extends CanvasLayer
 @onready var shop: Control = $SHOP
 @onready var label: TextureRect = $TextureRect3
 @onready var label1: TextureRect = $TextureRect2
+@onready var control: Control = $Control
 
 
 func _ready() -> void:
 	shop.scale=Vector2(0,0)
 	label.visible = true
 	label1.visible = true
+	control.scale=Vector2(0,0)
 	
 func _process(_delta: float) -> void:
 	$"pig value".text = str(GameManager.pig)
@@ -20,11 +22,14 @@ func _process(_delta: float) -> void:
 
 func _on_shop_pressed() -> void:
 	GameManager.play_button_click()
+	shop.visible = true
 	pop_in(shop)
 	
 
 func _on_pause_pressed() -> void:
 	GameManager.play_button_click()
+	control.visible = true
+	pop_in(control)
 
 
 

@@ -28,6 +28,7 @@ var pixel_accumulator: float = 0.0
 var sound_pool: Array[AudioStreamPlayer] = []
 
 func _ready():
+	print("Gift claimed:", GameManager.gift_claimed)
 	position = %RespawnPoint.position
 	randomize()
 	sound_pool = [oink_1,oink_2,oink_3,oink_4]
@@ -36,6 +37,8 @@ func _ready():
 		panel.visible = true
 		panel.scale = Vector2(0.0, 0.0)
 		animate_panel_in()
+	else:
+		panel.scale=Vector2(0,0)
 	
 func animate_panel_in():
 	var tween = create_tween()
@@ -50,7 +53,7 @@ func _on_buy_now_pressed() -> void:
 	GameManager.add_money_smooth(1000)
 	money_sound_2.play()
 	GameManager.gift_claimed = true
-	panel.visible = false
+	panel.scale=Vector2(0,0)
 	
 func _on_timer_timeout():
 	play_random_sound()
@@ -78,7 +81,10 @@ func _physics_process(delta: float) -> void:
 	var direction := 0.0
 	if GameManager.money > 0:
 		direction = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-		velocity.x = direction * speed
+		if on_ladder == true:
+			velocity.x = direction * speed/2
+		else:
+			velocity.x = direction*speed
 	elif GameManager.money ==0:
 		velocity.x = 0
 	if GameManager.money == 0 and (	Input.is_action_just_pressed("ui_right") or	Input.is_action_just_pressed("ui_left")):

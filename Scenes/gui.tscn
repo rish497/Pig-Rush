@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b37gg8qcstlg"]
+[gd_scene load_steps=33 format=3 uid="uid://b37gg8qcstlg"]
 
 [ext_resource type="Texture2D" uid="uid://b56f1ut3tly8k" path="res://Assets/piggy_sheet.png" id="1_bm56d"]
 [ext_resource type="Script" uid="uid://72fpe5d54ype" path="res://Scripts/gui.gd" id="1_m6o0h"]
@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cvvdte57mtkoo" path="res://Assets/PastelUIFree.png" id="5_8kag3"]
 [ext_resource type="Texture2D" uid="uid://cpjx2hl4nlma0" path="res://Assets/PastelUIFree (1) (3).png" id="5_gnd4w"]
 [ext_resource type="PackedScene" uid="uid://ccser5pvt2jeb" path="res://Scenes/Shop.tscn" id="6_3w84o"]
-[ext_resource type="Texture2D" uid="uid://gtqwyh44yphf" path="res://Assets/3408435.png" id="7_gnd4w"]
+[ext_resource type="Texture2D" uid="uid://cu7ycp01dkyo3" path="res://Assets/89f82acdce185ad118cd1374af8bd758.jpg" id="7_c5g4q"]
+[ext_resource type="StyleBox" uid="uid://p3sd02q311ie" path="res://gui.tres" id="7_s7psx"]
 [ext_resource type="PackedScene" uid="uid://b7mn41o7phbs8" path="res://Scenes/PotionEffect.tscn" id="9_bf1fa"]
 [ext_resource type="Texture2D" uid="uid://bnrluyd0r85wh" path="res://Assets/Speed_JE3_BE2.png" id="10_q52sk"]
+[ext_resource type="PackedScene" uid="uid://dlijjveelucwx" path="res://Scenes/PauseGame.tscn" id="11_c5g4q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah32c"]
 texture = ExtResource("1_bm56d")
@@ -40,9 +42,19 @@ texture = ExtResource("5_8kag3")
 region_rect = Rect2(175.946, 97.072, 14.024, 14.058)
 modulate_color = Color(0.7254902, 0.7254902, 0.7254902, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xnb2j"]
-texture = ExtResource("5_8kag3")
-region_rect = Rect2(175.8629, 144.69353, 14.097916, 14.212524)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_705sf"]
+load_path = "res://.godot/imported/PastelUIFree.png-f182f635939c4d092484547e70a38b3f.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s45yd"]
+texture = SubResource("CompressedTexture2D_705sf")
+region_rect = Rect2(175.8629, 113.027466, 14.097916, 14.012207)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ls8gd"]
+load_path = "res://.godot/imported/PastelUIFree.png-f182f635939c4d092484547e70a38b3f.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktflg"]
+texture = SubResource("CompressedTexture2D_ls8gd")
+region_rect = Rect2(192.04079, 112.94726, 13.907333, 14.036507)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s7psx"]
 texture = ExtResource("5_8kag3")
@@ -171,6 +183,20 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_bf1fa")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q52sk")
 theme_override_styles/hover = SubResource("StyleBoxTexture_c5g4q")
 
+[node name="Leaderboard" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.846
+anchor_top = 0.81900007
+anchor_right = 0.846
+anchor_bottom = 0.81900007
+offset_left = -45.59204
+offset_top = -41.712036
+offset_right = 42.40796
+offset_bottom = 46.287964
+theme_override_styles/normal = SubResource("StyleBoxTexture_s45yd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ktflg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s45yd")
+
 [node name="Settings" type="Button" parent="."]
 anchors_preset = -1
 anchor_left = 0.9480001
@@ -181,11 +207,12 @@ offset_left = -44.09607
 offset_top = -44.007996
 offset_right = 43.90393
 offset_bottom = 43.992004
-theme_override_styles/normal = SubResource("StyleBoxTexture_xnb2j")
+theme_override_styles/normal = ExtResource("7_s7psx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_s7psx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_705sf")
 
 [node name="TPtoSell" type="Button" parent="."]
+clip_children = 2
 anchors_preset = -1
 anchor_left = 0.84400004
 anchor_top = 0.46300003
@@ -202,17 +229,19 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_3tx2u")
 [node name="TextureRect3" type="TextureRect" parent="."]
 anchors_preset = -1
 anchor_left = 0.84400004
-anchor_top = 0.462
+anchor_top = 0.46400002
 anchor_right = 0.84400004
-anchor_bottom = 0.462
-offset_left = -42.288025
-offset_top = -42.376007
-offset_right = 469.71198
-offset_bottom = 469.624
+anchor_bottom = 0.46400002
+offset_left = -44.288086
+offset_top = -44.671997
+offset_right = 485.8515
+offset_bottom = 495.72827
 scale = Vector2(0.16599406, 0.1646927)
-texture = ExtResource("7_gnd4w")
+texture = ExtResource("7_c5g4q")
+expand_mode = 1
 
 [node name="SellAtSpot" type="Button" parent="."]
+clip_children = 2
 anchors_preset = -1
 anchor_left = 0.84400004
 anchor_top = 0.647
@@ -233,14 +262,16 @@ anchor_left = 0.84400004
 anchor_top = 0.647
 anchor_right = 0.84400004
 anchor_bottom = 0.647
-offset_left = -42.288025
-offset_top = -42.256012
-offset_right = 469.71198
-offset_bottom = 469.744
+offset_left = -44.288025
+offset_top = -44.256012
+offset_right = 485.85162
+offset_bottom = 496.14438
 scale = Vector2(0.16599406, 0.1646927)
-texture = ExtResource("7_gnd4w")
+texture = ExtResource("7_c5g4q")
+expand_mode = 1
 
 [node name="SHOP" parent="." instance=ExtResource("6_3w84o")]
+visible = false
 anchors_preset = -1
 anchor_left = 0.36600003
 anchor_top = 0.50200003
@@ -265,6 +296,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_6wv5k")
 theme_override_styles/hover = SubResource("StyleBoxTexture_t4dsw")
 
 [node name="Panel" parent="." instance=ExtResource("9_bf1fa")]
+visible = false
 anchors_preset = -1
 anchor_left = 0.038000003
 anchor_top = 0.934
@@ -276,7 +308,13 @@ offset_right = 73.224
 offset_bottom = 74.768005
 image = ExtResource("10_q52sk")
 
+[node name="Control" parent="." instance=ExtResource("11_c5g4q")]
+visible = false
+offset_left = -1.0
+offset_right = -1.0
+
 [connection signal="pressed" from="Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Leaderboard" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="SHOP/Button" to="." method="_on_button_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://ccser5pvt2jeb"]
+[gd_scene load_steps=22 format=3 uid="uid://ccser5pvt2jeb"]
 
 [ext_resource type="Script" uid="uid://2xnmxsk83k1p" path="res://Scripts/shop.gd" id="1_e5ji4"]
+[ext_resource type="StyleBox" uid="uid://bth5cesanbu6s" path="res://Shop.tres" id="2_dael7"]
 [ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="2_i4qx4"]
 [ext_resource type="Texture2D" uid="uid://cv7wmgh4kn2h7" path="res://Assets/image-removebg-preview (16).png" id="2_m1c0q"]
 [ext_resource type="Texture2D" uid="uid://cdyd1ionkv52k" path="res://Assets/image-removebg-preview (20).png" id="3_dael7"]
@@ -10,21 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://ct8jly6gosw68" path="res://Assets/pngtree-bicolor-icon-of-a-reward-seal-for-achieving-success-in-competitions-vector-png-image_19321810.png" id="6_2aaoe"]
 [ext_resource type="Texture2D" uid="uid://dewx0r1a0keeb" path="res://Assets/3142740.png" id="6_wndna"]
 [ext_resource type="Texture2D" uid="uid://ywnxequj2r2t" path="res://Assets/878580_hide_512x512.png" id="7_2aaoe"]
+[ext_resource type="Texture2D" uid="uid://rq7quaj7251l" path="res://Assets/GameMascot.png" id="7_gufdo"]
 [ext_resource type="PackedScene" uid="uid://cm3xuwmqmyiji" path="res://Scenes/ShopPotions.tscn" id="8_ct2yw"]
 [ext_resource type="Texture2D" uid="uid://hw73b3ysder0" path="res://Assets/28-288275_cash-cash-pixel-art-png.png" id="8_r8bg4"]
 [ext_resource type="Texture2D" uid="uid://dwi76wst3xtde" path="res://Assets/2742687.png" id="9_ccd4q"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5ji4"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(1, 0.70241714, 0.7961871, 1)
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8bg4"]
 bg_color = Color(0.6737013, 0.46599984, 1, 1)
@@ -96,7 +86,7 @@ offset_left = 248.0
 offset_top = 56.0
 offset_right = 904.0
 offset_bottom = 600.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_e5ji4")
+theme_override_styles/panel = ExtResource("2_dael7")
 
 [node name="Upgrade" type="Button" parent="ShopPanel"]
 layout_mode = 0
@@ -142,8 +132,13 @@ vertical_alignment = 1
 [node name="Label3" type="Label" parent="ShopPanel"]
 layout_mode = 0
 offset_right = 656.0
-offset_bottom = 662.33813
+offset_bottom = 544.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_1mgah")
+
+[node name="GameMascot" type="Sprite2D" parent="ShopPanel"]
+position = Vector2(580.00006, 449.00003)
+scale = Vector2(0.388, 0.388)
+texture = ExtResource("7_gufdo")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ShopPanel"]
 layout_mode = 1

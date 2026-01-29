@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7d4g5thmbwjj"
-path="res://.godot/imported/godotwaka2.png-7d3d010fb4adc0d433467ab1cc4754ed.ctex"
+uid="uid://cxmb3cvivupho"
+path="res://.godot/imported/superfrog_-_mappa_-_7-4.png-aefe1d55eca930847016c79deb198184.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/godotwaka2.png"
-dest_files=["res://.godot/imported/godotwaka2.png-7d3d010fb4adc0d433467ab1cc4754ed.ctex"]
+source_file="res://Assets/superfrog_-_mappa_-_7-4.png"
+dest_files=["res://.godot/imported/superfrog_-_mappa_-_7-4.png-aefe1d55eca930847016c79deb198184.ctex"]
 
 [params]
 
