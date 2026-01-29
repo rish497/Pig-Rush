@@ -180,7 +180,7 @@ func killplayer():
 	else:
 		death.play()
 		await revive_player()
-		await get_tree().create_timer(.4).timeout
+		await get_tree().create_timer(.6).timeout
 		GameManager.try_submit_best_score()
 		await play_death_animation()
 		GameManager.health = 0
@@ -201,7 +201,7 @@ func play_death_animation() -> void:
 	body_tween.tween_property(body, "modulate:a", 0.0, 0.3)
 
 	var ghost_tween = get_tree().create_tween()
-	ghost_tween.tween_property(ghost, "position:y", ghost.position.y - 60, 1.0)\
+	ghost_tween.tween_property(ghost, "position:y", ghost.position.y - 150, 1.5)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_OUT)
 	ghost_tween.tween_property(ghost, "modulate:a", 0.0, 1.0)

@@ -89,3 +89,5 @@ func _on_button_pressed() -> void:
 
 func _on_leaderboard_pressed() -> void:
 	leaderboard_2.visible = true
+	await get_tree().process_frame
+	leaderboard_2.call_deferred("refresh")

@@ -122,7 +122,6 @@ func activate_walking_free():
 func timer_start():
 	run_time += 1
 	await get_tree().create_timer(1).timeout
-	print(run_time)
 	timer_stop()
 	
 func timer_stop():
