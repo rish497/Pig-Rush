@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://2r318e3pbh10"]
+[gd_scene load_steps=26 format=3 uid="uid://2r318e3pbh10"]
 
 [ext_resource type="Script" uid="uid://gx7o25mbwoli" path="res://Scripts/piggie.gd" id="1_530ut"]
 [ext_resource type="Texture2D" uid="uid://chegt7or4jto0" path="res://Assets/golden_piggy_sheet (1).png" id="2_7mx3j"]
@@ -114,6 +114,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mm2g"]
 radius = 7.0
 
+[sub_resource type="Gradient" id="Gradient_7mx3j"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.61333334)
+colors = PackedColorArray(0.7411765, 0.827451, 1, 0.42352942, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0or6a"]
+gradient = SubResource("Gradient_7mx3j")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Piggie" type="CharacterBody2D"]
 position = Vector2(-5, 6)
 script = ExtResource("1_530ut")
@@ -136,6 +146,12 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(8, -9)
 shape = SubResource("CircleShape2D_1mm2g")
+
+[node name="Shield" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(8, -8.999999)
+scale = Vector2(0.45361337, 0.44192573)
+texture = SubResource("GradientTexture2D_0or6a")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ngfkt")

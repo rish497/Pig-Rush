@@ -22,6 +22,11 @@ var climbing:bool
 var can_move := true
 var last_x_position: float
 var pixel_accumulator: float = 0.0
+var invincible := false
+@export var invincibility_time := 3.0
+
+@onready var shield: Node2D = $Shield
+
 
 @export var pixels_per_money := 8
 
@@ -258,9 +263,6 @@ func respawen_player():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "ladders":
 		on_ladder = true
-	elif body.name == "spikes":
-		spike_touched()
-		play_heart_damage_anim()
  
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "ladders":
@@ -276,5 +278,4 @@ func play_heart_damage_anim():
 
 	tween.tween_property(self, "modulate", Color(1, 0.3, 0.3), 0.05)
 	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
-func spike_touched():
-	GameManager.health -=1
+	
