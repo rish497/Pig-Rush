@@ -25,3 +25,4 @@ Hello and welcome to my game *oink*.
 8. Background Music: https://pizzadoggy.itch.io/cozy-tunes
 9. Sound Effects: https://pixabay.com/sound-effects/
 10. TileSet: https://aamatniekss.itch.io/free-pixelart-platformer-tileset
+11. HeartSet: https://swooshwhoosh.itch.io/heartsui
