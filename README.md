@@ -21,8 +21,8 @@ Hello and welcome to my game *oink*.
 4. Golden Pig: https://caz-bee.itch.io/golden-piggy
 5. Purple Pig: https://caz-bee.itch.io/piggy
 6. Cursor Image:<a href="https://www.flaticon.com/free-icons/pointer" title="pointer icons">Pointer icons created by Amazona Adorada - Flaticon</a>
-7. KeyBoard Keys: https://tekilor.itch.io/2d-ui-keyboard
-8. Background Music: https://pizzadoggy.itch.io/cozy-tunes
-9. Sound Effects: https://pixabay.com/sound-effects/
-10. TileSet: https://aamatniekss.itch.io/free-pixelart-platformer-tileset
-11. HeartSet: https://swooshwhoosh.itch.io/heartsui
+7. Background Music: https://pizzadoggy.itch.io/cozy-tunes
+8. Sound Effects: https://pixabay.com/sound-effects/
+9. TileSet: https://aamatniekss.itch.io/free-pixelart-platformer-tileset
+10. HeartSet: https://swooshwhoosh.itch.io/heartsui
+11. Keyboard Keys UI: https://casper-gaming.itch.io/
