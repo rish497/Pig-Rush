@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm3rpvj4qiogl"]
+[gd_scene load_steps=6 format=3 uid="uid://bm3rpvj4qiogl"]
 
 [ext_resource type="Script" uid="uid://dyegl21ulw357" path="res://Scripts/game_manager.gd" id="1_511tk"]
 [ext_resource type="AudioStream" uid="uid://c3ho7ilmfegfe" path="res://Sounds/select-button-ui-395763.mp3" id="2_ef0r5"]
 [ext_resource type="AudioStream" uid="uid://cy7jnefeyu3ri" path="res://Sounds/Tales From The Vienna Woods.mp3" id="3_cxhmk"]
 [ext_resource type="AudioStream" uid="uid://dv08lw0qwa7hl" path="res://Sounds/item-equip-6904.mp3" id="4_uvxo2"]
+[ext_resource type="AudioStream" uid="uid://bsebamm8ynv14" path="res://Sounds/game-start-6104.mp3" id="5_ga5u6"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_511tk")
@@ -18,3 +19,6 @@ volume_db = -10.016
 [node name="collect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_uvxo2")
 volume_db = 3.963
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ga5u6")

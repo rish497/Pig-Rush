@@ -10,6 +10,7 @@ var death_ui_shown := false
 @onready var ScoreBoard: Control = $Died/Control
 @onready var leaderboard_2: Node2D = $Node/Leaderboard2
 
+@onready var tutorial: Control = $Tutorial
 
 func _ready() -> void:
 	shop.scale = Vector2(0,0)
@@ -20,7 +21,11 @@ func _ready() -> void:
 	death_label.visible=false
 	ScoreBoard.visible=false
 	leaderboard_2.visible=false
-	
+	if GameManager.tutorial == false:
+		await get_tree().create_timer(.2).timeout
+		tutorial.visible = true
+	else:
+		tutorial.visible = false
 	
 func _process(_delta: float) -> void:
 	if GameManager.health>0:

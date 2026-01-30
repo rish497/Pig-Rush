@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dx8lsqloqup5y"]
+[gd_scene load_steps=46 format=3 uid="uid://dx8lsqloqup5y"]
 
 [ext_resource type="Script" uid="uid://cku3sx47kju38" path="res://Scripts/main_menu_(play).gd" id="1_vrfmk"]
 [ext_resource type="Texture2D" uid="uid://cvvdte57mtkoo" path="res://Assets/PastelUIFree.png" id="1_x1upi"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://cjtjwu2cmbwa7" path="res://Assets/Pig Panic! pixel art logo.png" id="11_7jge0"]
 [ext_resource type="Texture2D" uid="uid://rq7quaj7251l" path="res://Assets/GameMascot.png" id="12_d1oks"]
 [ext_resource type="PackedScene" uid="uid://srrh6cm640yg" path="res://Scenes/InputData.tscn" id="13_feh14"]
-[ext_resource type="AudioStream" uid="uid://bsebamm8ynv14" path="res://Sounds/game-start-6104.mp3" id="14_l6tbi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1oks"]
 atlas = ExtResource("2_7jge0")
@@ -407,7 +406,6 @@ scale = Vector2(0.2446461, 0.24464606)
 texture = ExtResource("10_d1oks")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -429,9 +427,6 @@ offset_left = 1.0
 offset_top = -3.0
 offset_right = 1.0
 offset_bottom = -3.0
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_l6tbi")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

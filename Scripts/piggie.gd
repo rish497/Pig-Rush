@@ -17,6 +17,7 @@ extends CharacterBody2D
 @onready var panel: Panel = $CanvasLayer/Panel
 @onready var button: Button = $"CanvasLayer/Panel/BuyNow!"
 @onready var money_sound_2: AudioStreamPlayer = $MoneySound2
+var freeshown = false
 var on_ladder : bool
 var climbing:bool
 var can_move := true
@@ -26,6 +27,7 @@ var invincible := false
 @export var invincibility_time := 3.0
 
 @onready var shield: Node2D = $Shield
+@onready var piggie: CharacterBody2D = $"."
 
 
 @export var pixels_per_money := 8
@@ -38,13 +40,30 @@ func _ready():
 	randomize()
 	sound_pool = [oink_1,oink_2,oink_3,oink_4]
 	start_random_timer()
-	if GameManager.gift_claimed ==false:
-		panel.visible = true
-		panel.scale = Vector2(0.0, 0.0)
-		animate_panel_in()
+	if GameManager.gift_claimed ==false and GameManager.tutorial == false:
+		piggie.visible = false
+		panel.visible = false
+		set_physics_process(false)
 	else:
-		panel.scale=Vector2(0,0)
-	
+		set_physics_process(true)
+		panel.visible = false
+		panel.scale = Vector2(0,0)
+
+func showfree():
+	set_physics_process(true)
+	if freeshown:
+		return
+	freeshown = true
+	piggie.visible = true
+	panel.visible = true
+	panel.scale = Vector2(0,0)
+	GameManager.gift_claimed = true
+	animate_panel_in()
+
+func _process(delta: float) -> void:
+	if GameManager.tutorial and not freeshown and not GameManager.gift_claimed:
+		showfree()
+
 func animate_panel_in():
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
@@ -74,7 +93,7 @@ func play_random_sound():
 	var player = sound_pool.pick_random()
 	player.play()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:		
 	if GameManager.Tp_to_sell_pressed == true:
 		respawen_player()
 		GameManager.Tp_to_sell_pressed =false

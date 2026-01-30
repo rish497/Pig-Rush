@@ -26,18 +26,24 @@ var profile_made = false
 @onready var collect: AudioStreamPlayer = $collect
 var best_score := 0
 var last_submitted_score := -1
-
+var tutorial = false
 var run_time := 0
 
 var best_money := 0
 var best_pigs := 0
 var best_time := 0
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var ldboard_name = "main"
 var last_saved_score := -1
 var health = 6
 var Tp_to_sell_pressed = false
 var Sell_at_spot_pressed = false
+
+func mainmenustargame():
+	audio_stream_player.play()
+
+	
 func play_button_click():
 	if button_click.playing:
 		button_click.stop()

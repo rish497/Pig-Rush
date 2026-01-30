@@ -1,0 +1,241 @@
+[gd_scene load_steps=23 format=3 uid="uid://b8v48oxy285uj"]
+
+[ext_resource type="Script" uid="uid://c4pjossv6cqlv" path="res://Scripts/tutorial.gd" id="1_6x8ls"]
+[ext_resource type="Texture2D" uid="uid://rq7quaj7251l" path="res://Assets/GameMascot.png" id="1_thpfl"]
+[ext_resource type="Texture2D" uid="uid://cgtgdlnn42mb0" path="res://Assets/Persona_Style_Textbox.png" id="2_voubx"]
+[ext_resource type="FontFile" uid="uid://btgsyxn5r8w7h" path="res://Assets/Minecraft.ttf" id="3_n43i8"]
+[ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="5_jhoxt"]
+[ext_resource type="Texture2D" uid="uid://d3725u4ku21rh" path="res://Assets/keyboardIcons.png" id="6_3kqkp"]
+[ext_resource type="Texture2D" uid="uid://b56f1ut3tly8k" path="res://Assets/piggy_sheet.png" id="7_cbat6"]
+[ext_resource type="Texture2D" uid="uid://b65skxvg6lt2k" path="res://Assets/Stalls Pixel/4.png" id="8_mip4p"]
+[ext_resource type="Texture2D" uid="uid://ys2ioionbhrd" path="res://Assets/hearts.png" id="9_g6wqj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n43i8"]
+texture = ExtResource("2_voubx")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3kqkp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbat6"]
+texture = ExtResource("6_3kqkp")
+region_rect = Rect2(384.26877, 128.87595, 30.53949, 30.28479)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3kqkp"]
+texture = ExtResource("6_3kqkp")
+region_rect = Rect2(128.40967, 128.87595, 31.095032, 30.28479)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mip4p"]
+texture = ExtResource("6_3kqkp")
+region_rect = Rect2(0.98246765, 64.414955, 29.903912, 31.103752)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6wqj"]
+texture = ExtResource("6_3kqkp")
+region_rect = Rect2(192.8429, 64.79634, 30.12207, 30.373795)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpec5"]
+texture = ExtResource("6_3kqkp")
+region_rect = Rect2(320.2674, 231.93442, 30.922821, 23.092194)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xuuku"]
+texture = ExtResource("6_3kqkp")
+region_rect = Rect2(384.7885, 231.2993, 30.499054, 23.735168)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xqmum"]
+texture = ExtResource("6_3kqkp")
+region_rect = Rect2(0.9367256, 225.24335, 29.98862, 30.029083)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5frjj"]
+texture = ExtResource("6_3kqkp")
+texture_margin_left = 0.08390558
+region_rect = Rect2(192.78113, 224.36998, 29.9543, 30.709442)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tyqof"]
+texture = ExtResource("6_3kqkp")
+region_rect = Rect2(-0.59251785, 196.89877, 32.67713, 26.500458)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e7wb0"]
+texture = ExtResource("7_cbat6")
+region_rect = Rect2(7.121333, 14.859703, 17.997776, 17.074816)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kjpud"]
+texture = ExtResource("9_g6wqj")
+region_rect = Rect2(95.50958, 1.3562288, 19.29831, 18.993202)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6x8ls")
+
+[node name="GameMascot" type="Sprite2D" parent="."]
+position = Vector2(120.999985, 428.99997)
+scale = Vector2(1.0910001, 1.0910001)
+texture = ExtResource("1_thpfl")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.42600003
+anchor_top = 0.588
+anchor_right = 0.42600003
+anchor_bottom = 0.588
+offset_left = -293.75204
+offset_top = 2.9760132
+offset_right = 214.24796
+offset_bottom = 254.97601
+theme_override_styles/panel = SubResource("StyleBoxTexture_n43i8")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 66.0
+offset_right = 468.0
+offset_bottom = 173.0
+theme_override_fonts/font = ExtResource("3_n43i8")
+theme_override_font_sizes/font_size = 29
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 172.0
+offset_right = 462.68085
+offset_bottom = 250.0
+theme_override_colors/font_color = Color(1, 0.8152859, 0.89609337, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.696847, 0.83289576, 1)
+theme_override_colors/font_hover_color = Color(1, 0.64590436, 0.8086991, 1)
+theme_override_fonts/font = ExtResource("5_jhoxt")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3kqkp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3kqkp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3kqkp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3kqkp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3kqkp")
+text = "Next >"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Movement" type="Node2D" parent="."]
+visible = false
+position = Vector2(267, 460)
+
+[node name="Label" type="Label" parent="Movement"]
+offset_left = 204.0
+offset_top = 63.0
+offset_right = 235.0
+offset_bottom = 94.775
+theme_override_styles/normal = SubResource("StyleBoxTexture_cbat6")
+
+[node name="Label2" type="Label" parent="Movement"]
+offset_left = 204.0
+offset_top = 86.0
+offset_right = 235.0
+offset_bottom = 117.774994
+theme_override_styles/normal = SubResource("StyleBoxTexture_3kqkp")
+
+[node name="Label3" type="Label" parent="Movement"]
+offset_left = 173.0
+offset_top = 86.0
+offset_right = 204.0
+offset_bottom = 117.775
+theme_override_styles/normal = SubResource("StyleBoxTexture_mip4p")
+
+[node name="Label4" type="Label" parent="Movement"]
+offset_left = 235.0
+offset_top = 86.0
+offset_right = 266.0
+offset_bottom = 117.775
+theme_override_styles/normal = SubResource("StyleBoxTexture_g6wqj")
+
+[node name="Label5" type="Label" parent="Movement"]
+offset_left = 311.0
+offset_top = 79.99998
+offset_right = 342.0
+offset_bottom = 102.99998
+theme_override_styles/normal = SubResource("StyleBoxTexture_dpec5")
+
+[node name="Label6" type="Label" parent="Movement"]
+offset_left = 311.0
+offset_top = 93.774994
+offset_right = 342.0
+offset_bottom = 116.774994
+theme_override_styles/normal = SubResource("StyleBoxTexture_xuuku")
+
+[node name="Label7" type="Label" parent="Movement"]
+offset_left = 280.0
+offset_top = 85.0
+offset_right = 311.0
+offset_bottom = 116.775
+theme_override_styles/normal = SubResource("StyleBoxTexture_xqmum")
+
+[node name="Label8" type="Label" parent="Movement"]
+offset_left = 342.0
+offset_top = 83.0
+offset_right = 373.0
+offset_bottom = 114.775
+theme_override_styles/normal = SubResource("StyleBoxTexture_5frjj")
+
+[node name="Ladder" type="Node2D" parent="."]
+visible = false
+position = Vector2(-8, 456)
+
+[node name="Label" type="Label" parent="Ladder"]
+offset_left = 234.0
+offset_top = 86.0
+offset_right = 265.0
+offset_bottom = 117.775
+theme_override_styles/normal = SubResource("StyleBoxTexture_cbat6")
+
+[node name="Label2" type="Label" parent="Ladder"]
+offset_left = 269.0
+offset_top = 86.0
+offset_right = 300.0
+offset_bottom = 117.775
+theme_override_styles/normal = SubResource("StyleBoxTexture_tyqof")
+
+[node name="Label5" type="Label" parent="Ladder"]
+offset_left = 303.0
+offset_top = 87.99998
+offset_right = 334.0
+offset_bottom = 110.99998
+theme_override_styles/normal = SubResource("StyleBoxTexture_dpec5")
+
+[node name="Pig" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.53900003
+anchor_top = 0.93100005
+anchor_right = 0.53900003
+anchor_bottom = 0.93100005
+offset_left = -405.92804
+offset_top = -74.288025
+offset_right = -344.4646
+offset_bottom = -14.288025
+theme_override_styles/normal = SubResource("StyleBoxTexture_e7wb0")
+
+[node name="Shop" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(279, 534)
+scale = Vector2(0.3139536, 0.3139536)
+texture = ExtResource("8_mip4p")
+
+[node name="Heart" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.53900003
+anchor_top = 0.93100005
+anchor_right = 0.53900003
+anchor_bottom = 0.93100005
+offset_left = -132.92804
+offset_top = -88.288025
+offset_right = -50.976807
+offset_bottom = -8.288025
+theme_override_styles/normal = SubResource("StyleBoxTexture_kjpud")
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

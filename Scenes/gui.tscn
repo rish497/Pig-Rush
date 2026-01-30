@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b37gg8qcstlg"]
+[gd_scene load_steps=43 format=3 uid="uid://b37gg8qcstlg"]
 
 [ext_resource type="Texture2D" uid="uid://b56f1ut3tly8k" path="res://Assets/piggy_sheet.png" id="1_bm56d"]
 [ext_resource type="Script" uid="uid://72fpe5d54ype" path="res://Scripts/gui.gd" id="1_m6o0h"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b7wvarjylaxnx" path="res://Assets/HealthUI.png" id="13_705sf"]
 [ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="14_6wv5k"]
 [ext_resource type="PackedScene" uid="uid://dbltdiufbgp5h" path="res://Scenes/Died.tscn" id="14_603go"]
+[ext_resource type="PackedScene" uid="uid://b8v48oxy285uj" path="res://Scenes/Tutorial.tscn" id="15_6wv5k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah32c"]
 texture = ExtResource("1_bm56d")
@@ -430,6 +431,13 @@ offset_left = 1.0
 offset_top = -3.0
 offset_right = 1.0
 offset_bottom = -3.0
+
+[node name="Tutorial" parent="." instance=ExtResource("15_6wv5k")]
+visible = false
+offset_left = -3.0
+offset_top = 5.0
+offset_right = -3.0
+offset_bottom = 5.0
 
 [connection signal="pressed" from="Node/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Node/Pause" to="." method="_on_pause_pressed"]
