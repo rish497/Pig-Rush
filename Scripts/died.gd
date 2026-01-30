@@ -40,5 +40,6 @@ func format_time(seconds: float) -> String:
 
 
 func _on_button_pressed() -> void:
+	GameManager.play_button_click()
 	GameManager.reset_run()
 	get_tree().change_scene_to_file("res://Scenes/Main Menu (Play).tscn")

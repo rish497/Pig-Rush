@@ -4,6 +4,7 @@ extends Control
 @onready var color_rect_2: ColorRect = $ColorRect2
 @onready var about: Panel = $CanvasLayer/About
 @onready var InputId: Control = $Control
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -27,7 +28,7 @@ func animate_panel_out():
 @onready var control: Control = $Control
 	
 func _on_button_pressed() -> void:
-	GameManager.play_button_click()
+	audio_stream_player.play()
 	if GameManager.profile_made == false:
 		InputId.visible = true
 	else:
@@ -45,6 +46,7 @@ func _on_button_3_pressed() -> void:
 	animate_panel_in()
 
 func _on_xout_pressed() -> void:
+	GameManager.play_button_click()
 	animate_panel_out()
 	await  get_tree().create_timer(0.2).timeout
 	about.visible = false

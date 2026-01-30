@@ -24,6 +24,9 @@ func _process(delta):
 	if player_inside and Input.is_action_just_pressed("E"):
 		GameManager.play_button_click()
 		sold()
+	if GameManager.Sell_at_spot_pressed == true:
+		sold()
+		GameManager.Sell_at_spot_pressed=false
 
 
 func sold():

@@ -28,7 +28,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SilentWolf/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/silent_wolf (2)/plugin.cfg", "res://addons/silent_wolf/SilentWolf/plugin.cfg", "res://addons/silent_wolf/Silentwolf/plugin.cfg", "res://addons/silent_wolf/plugin.cfg", "res://addons/silent_wolf/silent_wolf/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
 
 [global_group]
 

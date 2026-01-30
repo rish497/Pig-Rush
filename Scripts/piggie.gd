@@ -50,6 +50,7 @@ func animate_panel_in():
 	tween.tween_property(panel, "scale", Vector2(1.0, 1.0), 0.1)
 
 func _on_buy_now_pressed() -> void:
+	GameManager.play_button_click()
 	GameManager.add_money_smooth(1000)
 	money_sound_2.play()
 	GameManager.gift_claimed = true
@@ -69,6 +70,9 @@ func play_random_sound():
 	player.play()
 
 func _physics_process(delta: float) -> void:
+	if GameManager.Tp_to_sell_pressed == true:
+		respawen_player()
+		GameManager.Tp_to_sell_pressed =false
 	if not can_move:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -182,8 +186,8 @@ func killplayer():
 		await revive_player()
 		await get_tree().create_timer(.6).timeout
 		GameManager.try_submit_best_score()
+		GameManager.health =0
 		await play_death_animation()
-		GameManager.health = 0
 
 
 func play_death_animation() -> void:
@@ -234,14 +238,34 @@ func revive_player():
 	play_heart_damage_anim()
 	Engine.time_scale = 1.0
 	can_move = true
+func respawen_player():
+	can_move = false
+	velocity = Vector2.ZERO
+	Engine.time_scale = 0.6
+
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 0.25)
+	await tween.finished
+
+	global_position = %RespawnPoint.global_position
+
+	var tween_in = create_tween()
+	tween_in.tween_property(self, "modulate:a", 1.0, 0.25)
+	await tween_in.finished
+	Engine.time_scale = 1.0
+	can_move = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	on_ladder = true
-
+	if body.name == "ladders":
+		on_ladder = true
+	elif body.name == "spikes":
+		spike_touched()
+		play_heart_damage_anim()
  
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	on_ladder = false
-	sprite.play("Idle")
+	if body.name == "ladders":
+		on_ladder = false
+		sprite.play("Idle")
 	
 func play_heart_damage_anim():
 	var tween = create_tween()
@@ -252,3 +276,5 @@ func play_heart_damage_anim():
 
 	tween.tween_property(self, "modulate", Color(1, 0.3, 0.3), 0.05)
 	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
+func spike_touched():
+	GameManager.health -=1

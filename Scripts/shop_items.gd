@@ -12,10 +12,14 @@ func _ready():
 	$TextureRect.texture = itemimage
 	$PanelContainer/HBoxContainer/Label.text = itemprice
 	$Label2.text = itemdescription
+	
+func _process(delta: float) -> void:
 	if GameManager.money >= int(itemprice):
 		label_3.visible = false
 	else:
 		label_3.visible = true
+	if label_4.visible == true:
+			label_3.visible = false
 		
 		
 

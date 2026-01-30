@@ -117,6 +117,7 @@ func clear_leaderboard() -> void:
 
 
 func _on_CloseButton_pressed() -> void:
+	GameManager.play_button_click()
 	hide()
 	
 func refresh():

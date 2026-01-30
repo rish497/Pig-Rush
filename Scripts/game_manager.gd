@@ -36,6 +36,8 @@ var best_time := 0
 var ldboard_name = "main"
 var last_saved_score := -1
 var health = 6
+var Tp_to_sell_pressed = false
+var Sell_at_spot_pressed = false
 func play_button_click():
 	if button_click.playing:
 		button_click.stop()

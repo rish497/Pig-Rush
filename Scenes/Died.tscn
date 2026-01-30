@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbltdiufbgp5h"]
+[gd_scene load_steps=8 format=3 uid="uid://dbltdiufbgp5h"]
 
 [ext_resource type="Script" uid="uid://c675ku0ewynl" path="res://Scripts/died.gd" id="1_bjxio"]
 [ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="1_yfnab"]
@@ -11,6 +11,15 @@ border_color = Color(0, 0, 0, 0)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjxio"]
+bg_color = Color(0.87058824, 0.4, 0.7529412, 0.9647059)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhv58"]
+bg_color = Color(0.87058824, 0.4, 0.7529412, 0.64705884)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -211,7 +220,8 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.75999755, 0.75999755)
 theme_override_styles/normal = SubResource("StyleBoxFlat_bjxio")
-text = "NEXT"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jhv58")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bjxio")
 
 [node name="TextureRect" type="TextureRect" parent="Button"]
 layout_mode = 1

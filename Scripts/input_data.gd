@@ -10,6 +10,7 @@ func _ready() -> void:
 	panel_2.visible = false
 	label.visible = false
 func _on_button_pressed() -> void:
+	GameManager.play_button_click()
 	panel_2.visible = true
 	label.visible = true
 	await get_tree().create_timer(1).timeout

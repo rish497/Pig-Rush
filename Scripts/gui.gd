@@ -70,17 +70,11 @@ func _on_pause_pressed() -> void:
 	pop_in(control)
 
 
-
-func _on_settings_pressed() -> void:
-	GameManager.play_button_click()
-
-
 func pop_in(panel):
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(panel, "scale", Vector2(1.0, 1.0), .6)
-
 
 func _on_button_pressed() -> void:
 	GameManager.play_button_click()
@@ -91,3 +85,13 @@ func _on_leaderboard_pressed() -> void:
 	leaderboard_2.visible = true
 	await get_tree().process_frame
 	leaderboard_2.call_deferred("refresh")
+
+
+func _on_t_pto_sell_pressed() -> void:
+	GameManager.play_button_click()
+	GameManager.Tp_to_sell_pressed =true
+
+
+func _on_sell_at_spot_pressed() -> void:
+	GameManager.play_button_click()
+	GameManager.Sell_at_spot_pressed = true

@@ -12,8 +12,10 @@ func scroll_to_item(item: Control):
 
 
 func _on_upgrade_pressed() -> void:
+	GameManager.play_button_click()
 	scroll_to_item($ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/Label)
 
 
 func _on_potions_pressed() -> void:
+	GameManager.play_button_click()
 	scroll_to_item($ShopPanel/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/Label2)
