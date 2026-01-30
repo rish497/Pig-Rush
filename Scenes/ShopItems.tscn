@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bue1w6d7w2oe6"]
+[gd_scene load_steps=16 format=3 uid="uid://bue1w6d7w2oe6"]
 
 [ext_resource type="Script" uid="uid://b1gnc55lalwx7" path="res://Scripts/shop_items.gd" id="1_d52ko"]
 [ext_resource type="Texture2D" uid="uid://f58gboy335u2" path="res://icon.svg" id="2_a6xse"]
 [ext_resource type="FontFile" uid="uid://674hml2ijmih" path="res://Assets/editundo.ttf" id="3_0urpg"]
 [ext_resource type="Texture2D" uid="uid://djs52ooum31q" path="res://Assets/image (3).png" id="3_a6xse"]
+[ext_resource type="AudioStream" uid="uid://yeee5cwi6807" path="res://Sounds/cashier-quotka-chingquot-sound-effect-129698.mp3" id="5_h6wxi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6xse"]
 content_margin_left = 1.0
@@ -238,5 +239,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_85auk")
 text = "ALREADY BOUGHT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_h6wxi")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

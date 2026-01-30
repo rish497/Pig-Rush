@@ -90,10 +90,10 @@ theme_override_styles/panel = ExtResource("2_dael7")
 
 [node name="Upgrade" type="Button" parent="ShopPanel"]
 layout_mode = 0
-offset_left = 463.0
-offset_top = -33.0
-offset_right = 523.0
-offset_bottom = 38.068184
+offset_left = 453.0
+offset_top = -32.0
+offset_right = 513.0
+offset_bottom = 39.068184
 theme_override_styles/normal = SubResource("StyleBoxFlat_r8bg4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dael7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r8bg4")
@@ -103,10 +103,10 @@ expand_icon = true
 
 [node name="Potions" type="Button" parent="ShopPanel"]
 layout_mode = 0
-offset_left = 534.0
-offset_top = -33.0
-offset_right = 594.0
-offset_bottom = 38.068184
+offset_left = 524.0
+offset_top = -32.0
+offset_right = 584.0
+offset_bottom = 39.068184
 theme_override_styles/normal = SubResource("StyleBoxFlat_gufdo")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ox0pj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gufdo")

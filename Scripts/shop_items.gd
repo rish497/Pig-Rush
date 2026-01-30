@@ -5,6 +5,7 @@ extends Panel
 @export var itemprice: String
 @export var itemdescription: String
 @onready var label_4: ColorRect = $ColorRect2
+@onready var spend: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready():
@@ -24,6 +25,7 @@ func _process(delta: float) -> void:
 		
 
 func _on_button_pressed() -> void:
+	spend.play()
 	GameManager.play_button_click()
 	if GameManager.money>=int(itemprice):
 		GameManager.loose_money_smooth(int(itemprice))
