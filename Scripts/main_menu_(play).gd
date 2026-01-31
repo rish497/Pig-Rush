@@ -4,7 +4,9 @@ extends Control
 @onready var color_rect_2: ColorRect = $ColorRect2
 @onready var about: Panel = $CanvasLayer/About
 @onready var InputId: Control = $Control
-
+@onready var credits: Panel = $CanvasLayer/Credits
+@onready var xoutt: Button = $CanvasLayer/Credits/Xoutt
+@onready var control: Control = $Control
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	GameManager.play_music()
@@ -12,18 +14,18 @@ func _ready() -> void:
 	await get_tree().process_frame
 	reveal_from_black(2)
 
-func animate_panel_in():
+func animate_panel_in(panel):
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(about, "scale", Vector2(1, 1), 0.6)
+	tween.tween_property(panel, "scale", Vector2(1, 1), 0.6)
 	
-func animate_panel_out():
+func animate_panel_out(panel):
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(about, "scale", Vector2(0, 0), 0.6)
-@onready var control: Control = $Control
+	tween.tween_property(panel, "scale", Vector2(0, 0), 0.6)
+
 	
 func _on_button_pressed() -> void:
 	GameManager.mainmenustargame()
@@ -41,11 +43,11 @@ func _on_button_2_pressed() -> void:
 func _on_button_3_pressed() -> void:
 	GameManager.play_button_click()
 	about.visible = true
-	animate_panel_in()
+	animate_panel_in(about)
 
 func _on_xout_pressed() -> void:
 	GameManager.play_button_click()
-	animate_panel_out()
+	animate_panel_out(about)
 	await  get_tree().create_timer(0.2).timeout
 	about.visible = false
 
@@ -59,3 +61,16 @@ func reveal_from_black(duration: float = 1.0) -> void:
 	tween.tween_property(color_rect_2,"position:y",screen_height,duration)
 	await tween.finished
 	color_rect_2.visible = false
+
+
+func _on_button_4_pressed() -> void:
+	GameManager.play_button_click()
+	credits.visible = true
+	animate_panel_in(credits)
+
+
+func _on_xoutt_pressed() -> void:
+	GameManager.play_button_click()
+	animate_panel_out(credits)
+	await  get_tree().create_timer(0.2).timeout
+	credits.visible = false

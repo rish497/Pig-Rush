@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://2r318e3pbh10"]
+[gd_scene load_steps=27 format=3 uid="uid://2r318e3pbh10"]
 
 [ext_resource type="Script" uid="uid://gx7o25mbwoli" path="res://Scripts/piggie.gd" id="1_530ut"]
 [ext_resource type="Texture2D" uid="uid://chegt7or4jto0" path="res://Assets/golden_piggy_sheet (1).png" id="2_7mx3j"]
@@ -114,6 +114,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mm2g"]
 radius = 7.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mx3j"]
+size = Vector2(9, 9)
+
 [sub_resource type="Gradient" id="Gradient_7mx3j"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0, 0.61333334)
@@ -138,6 +141,10 @@ frame_progress = 0.45938766
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, -9)
 shape = SubResource("CircleShape2D_1mm2g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, -4.5)
+shape = SubResource("RectangleShape2D_7mx3j")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

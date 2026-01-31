@@ -31,5 +31,4 @@ func spawn_asset():
 	item.global_position = pos
 	add_child(item)
 
-	# ✅ PRINT POSITION
 	print("Asset spawned at:", pos)

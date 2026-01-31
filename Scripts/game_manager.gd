@@ -4,7 +4,7 @@ var pig = 0
 var money = 0
 var arrow = load("res://Assets/Pointer3.png")
 var pig_value = 100
-var walking_value := 1
+var walking_value = 1
 var collect_sound = false
 var TP_to_sell = false
 var Sell_at_spot = false
@@ -26,23 +26,28 @@ var profile_made = false
 @onready var collect: AudioStreamPlayer = $collect
 var best_score := 0
 var last_submitted_score := -1
-var tutorial = false
+var tutorial = true
 var run_time := 0
 
 var best_money := 0
 var best_pigs := 0
 var best_time := 0
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var pigsound: AudioStreamPlayer = $CollectSound
+@onready var heal_collected: AudioStreamPlayer = $HealCollected
 
 var ldboard_name = "main"
 var last_saved_score := -1
 var health = 6
 var Tp_to_sell_pressed = false
 var Sell_at_spot_pressed = false
-
+func healthcollected():
+	heal_collected.play()
 func mainmenustargame():
 	audio_stream_player.play()
-
+	
+func pigcollectsound():
+	pigsound.play()
 	
 func play_button_click():
 	if button_click.playing:

@@ -212,9 +212,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -76.0
-offset_top = -161.0
-offset_right = 150.0
+offset_left = -91.0
+offset_top = -160.99997
+offset_right = 231.3695
 offset_bottom = -69.23486
 grow_horizontal = 2
 grow_vertical = 0
@@ -236,11 +236,11 @@ texture = SubResource("GradientTexture2D_bjxio")
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 0
-offset_right = 226.0
+offset_right = 322.3695
 offset_bottom = 92.0
 theme_override_fonts/font = ExtResource("1_yfnab")
 theme_override_font_sizes/font_size = 64
-text = "NEXT"
+text = "MAIN MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
 

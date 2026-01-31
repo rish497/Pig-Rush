@@ -263,10 +263,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 115.99994
-offset_top = -150.00002
-offset_right = 593.0
-offset_bottom = -34.0
+offset_left = 105.0
+offset_top = -235.0
+offset_right = 582.0
+offset_bottom = -118.999985
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.84000015, 0.84000015)
@@ -286,10 +286,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 116.0
-offset_top = -12.0000305
-offset_right = 609.0
-offset_bottom = 108.99997
+offset_left = 105.00006
+offset_top = -97.000015
+offset_right = 598.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.84000015, 0.84000015)
@@ -309,10 +309,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 115.99994
-offset_top = 124.0
-offset_right = 620.0
-offset_bottom = 247.80945
+offset_left = 105.0
+offset_top = 39.0
+offset_right = 609.0
+offset_bottom = 162.80945
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.84000015, 0.84000015)
@@ -324,6 +324,29 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_r22a7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_r22a7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r22a7")
 text = "CREATOR"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 105.0
+offset_top = 190.0
+offset_right = 609.0
+offset_bottom = 313.80945
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.84000015, 0.84000015)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.9882353, 0.8156863, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_hbusa")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxTexture_r22a7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r22a7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r22a7")
+text = "CREDITS"
 
 [node name="GameMascot" type="Sprite2D" parent="."]
 position = Vector2(1096, 55.999992)
@@ -391,6 +414,7 @@ offset_left = 57.992645
 offset_top = 173.0
 offset_right = 260.99265
 offset_bottom = 405.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("8_jg834")
 theme_override_font_sizes/normal_font_size = 20
 text = "Hi, my name is Rishabh and I am the solo creator of this project. I am from India and currently in Grade 10th. I love coding and playing basketball. One skill that I have achieved over 3 years is playing the Guitar. Finally, I LOVE TRAVELLING. Have been everywhere in the world except Europe. Thanks for visitng my project 😃"
@@ -405,7 +429,97 @@ position = Vector2(410.9927, 342)
 scale = Vector2(0.2446461, 0.24464606)
 texture = ExtResource("10_d1oks")
 
+[node name="Credits" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.99265
+offset_top = -229.0
+offset_right = 260.99265
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.28, 1.28)
+pivot_offset = Vector2(270, -150)
+theme_override_styles/panel = SubResource("StyleBoxTexture_feh14")
+
+[node name="Label" type="Label" parent="CanvasLayer/Credits"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 94.0
+offset_right = 490.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("3_hbusa")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6tbi")
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Xoutt" type="Button" parent="CanvasLayer/Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 202.0
+offset_top = -457.0
+offset_right = 262.0
+offset_bottom = -398.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hbusa")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_jx60w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jx60w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_igwxa")
+text = "X"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Credits"]
+layout_mode = 0
+offset_left = 57.992645
+offset_top = 173.0
+offset_right = 466.86923
+offset_bottom = 402.34375
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_hbusa")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]
+[color=#aaaaaa]Designed by[/color]
+[font_size=24]Rishabh Mittal[/font_size]
+
+[color=#aaaaaa]Coded BY[/color]
+[font_size=24]Rishabh Mittal[/font_size]
+
+[color=#aaaaaa]Background Music By[/color]
+[font_size=24]Pizza Doggy[/font_size]
+
+[color=#aaaaaa]Assets from[/color]
+[font_size=24]Mark Velyx (Stand Spritesheet)
+ToffeeCraft (Sign Boards)
+Caz Bee (Golden Pig)
+Caz Bee (Purple Pig)
+Amazona Adorada (Flaticon) (Cursor Image)
+Aamatniekss (Pixel Art Platformer TileSet)
+SwooshWhoosh (Heart UI Set)
+Casper Gaming (Keyboard Keys UI)[/font_size]
+
+[color=#aaaaaa]Gif to Sprite Converter[/color]
+[font_size=24]JackLeHamster[/font_size]
+
+
+[font_size=18][i]Thank you for playing![/i][/font_size]
+[/center]"
+
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -431,4 +545,6 @@ offset_bottom = -3.0
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="CanvasLayer/About/Xout" to="." method="_on_xout_pressed"]
+[connection signal="pressed" from="CanvasLayer/Credits/Xoutt" to="." method="_on_xoutt_pressed"]

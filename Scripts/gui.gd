@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 		died.self_modulate.a = 0.0
 	$Node/AnimatedSprite2D.play(str(GameManager.health))
 	$"Node/pig value".text = str(GameManager.pig)
-	$"Node/Money Value".text = str(GameManager.money)
+	$"Node/Money Value".text = str(int(GameManager.money))
 	if GameManager.TP_to_sell == true:
 		label.visible = false
 	if GameManager.Sell_at_spot == true:

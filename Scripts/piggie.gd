@@ -29,7 +29,7 @@ var invincible := false
 @onready var shield: Node2D = $Shield
 @onready var piggie: CharacterBody2D = $"."
 
-
+@onready var heal_collected: AudioStreamPlayer = $HealCollected
 @export var pixels_per_money := 8
 
 var sound_pool: Array[AudioStreamPlayer] = []
