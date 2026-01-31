@@ -26,7 +26,7 @@ var profile_made = false
 @onready var collect: AudioStreamPlayer = $collect
 var best_score := 0
 var last_submitted_score := -1
-var tutorial = true
+var tutorial = false
 var run_time := 0
 
 var best_money := 0
@@ -35,7 +35,7 @@ var best_time := 0
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var pigsound: AudioStreamPlayer = $CollectSound
 @onready var heal_collected: AudioStreamPlayer = $HealCollected
-
+var volume_level := 3
 var ldboard_name = "main"
 var last_saved_score := -1
 var health = 6
@@ -48,7 +48,16 @@ func mainmenustargame():
 	
 func pigcollectsound():
 	pigsound.play()
+func apply_volume():
+	var bus_index = AudioServer.get_bus_index("Master")
+
+	var db_values = [-80, -20, -10, 0]
+	AudioServer.set_bus_volume_db(bus_index, db_values[volume_level])
 	
+func cycle_volume():
+	volume_level = (volume_level + 1) % 4
+	apply_volume()
+
 func play_button_click():
 	if button_click.playing:
 		button_click.stop()
@@ -75,6 +84,7 @@ func reset_run():
 	
 
 func _ready():
+	apply_volume()
 	SilentWolf.configure({
 		"api_key": "iXNVMVArkV22UrBQoZSU33u9Q0oODSG97KMhTnBH",
 		"game_id": "PigPanic",

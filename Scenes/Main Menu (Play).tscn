@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dx8lsqloqup5y"]
+[gd_scene load_steps=47 format=3 uid="uid://dx8lsqloqup5y"]
 
 [ext_resource type="Script" uid="uid://cku3sx47kju38" path="res://Scripts/main_menu_(play).gd" id="1_vrfmk"]
 [ext_resource type="Texture2D" uid="uid://cvvdte57mtkoo" path="res://Assets/PastelUIFree.png" id="1_x1upi"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cjtjwu2cmbwa7" path="res://Assets/Pig Panic! pixel art logo.png" id="11_7jge0"]
 [ext_resource type="Texture2D" uid="uid://rq7quaj7251l" path="res://Assets/GameMascot.png" id="12_d1oks"]
 [ext_resource type="PackedScene" uid="uid://srrh6cm640yg" path="res://Scenes/InputData.tscn" id="13_feh14"]
+[ext_resource type="PackedScene" uid="uid://ds7vd3dbr1gks" path="res://Scenes/Volume.tscn" id="14_l6tbi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1oks"]
 atlas = ExtResource("2_7jge0")
@@ -353,6 +354,14 @@ position = Vector2(1096, 55.999992)
 rotation = -2.3561945
 scale = Vector2(0.47256973, 0.47256973)
 texture = ExtResource("12_d1oks")
+
+[node name="Control2" parent="." instance=ExtResource("14_l6tbi")]
+layout_mode = 1
+offset_left = -84.0
+offset_top = 531.00006
+offset_right = -84.0
+offset_bottom = 531.0
+scale = Vector2(0.2378748, 0.2378748)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

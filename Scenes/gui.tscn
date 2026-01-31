@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://b37gg8qcstlg"]
+[gd_scene load_steps=44 format=3 uid="uid://b37gg8qcstlg"]
 
 [ext_resource type="Texture2D" uid="uid://b56f1ut3tly8k" path="res://Assets/piggy_sheet.png" id="1_bm56d"]
 [ext_resource type="Script" uid="uid://72fpe5d54ype" path="res://Scripts/gui.gd" id="1_m6o0h"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="14_6wv5k"]
 [ext_resource type="PackedScene" uid="uid://dbltdiufbgp5h" path="res://Scenes/Died.tscn" id="14_603go"]
 [ext_resource type="PackedScene" uid="uid://b8v48oxy285uj" path="res://Scenes/Tutorial.tscn" id="15_6wv5k"]
+[ext_resource type="PackedScene" uid="uid://ds7vd3dbr1gks" path="res://Scenes/Volume.tscn" id="16_t4dsw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah32c"]
 texture = ExtResource("1_bm56d")
@@ -438,6 +439,13 @@ offset_left = -3.0
 offset_top = 5.0
 offset_right = -3.0
 offset_bottom = 5.0
+
+[node name="Control2" parent="." instance=ExtResource("16_t4dsw")]
+offset_left = -84.00001
+offset_top = 531.00006
+offset_right = -84.0
+offset_bottom = 531.0
+scale = Vector2(0.2378748, 0.2378748)
 
 [connection signal="pressed" from="Node/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Node/Pause" to="." method="_on_pause_pressed"]
